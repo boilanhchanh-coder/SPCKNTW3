@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    h2{
+        color: rgb(246, 240, 240);
+    }
+    body{
+        font-family:'Inter',sans-serif;
+        background-color:#0a0a09;
+        color:#d6cdcd; 
+
+    }
+    .head{
+        display: flex;
+        justify-content:space-between;
+    }
+    .logo{
+        margin-left: 100px;
+    }
+    .ttin{
+        margin-right: 100px;
+        font-size: small;
+    }
+    .frames{
+        display: flex;
+        justify-content: space-between;
+    }
+   .dong-ke{
+    width: 85%;
+    height: 0.3px;
+    border: none;
+    background: #666;
+    margin: 10px auto;
+    }
+    .register{
+        width: 60%;
+        height: 400px;
+        margin-top: 50px;
+        margin-right: 250px;
+        margin-left: 70px;
+
+    }
+    .soc-doc{
+    width: 1px;
+    background: #444;
+    height: 550px; 
+    margin-top: 50px;
+    }
+    .login{
+        width: 40%;
+        height: 400px;
+        margin-top: 50px;
+        margin-left: 300px;
+    }
+    input{
+        color:#666;
+        background-color: black;
+        border: 1px solid #666;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        width: 80%;
+        height: 8%;
+    }
+    
+    label{
+        display: block;
+        margin-bottom: 5px;
+    }
+    .mk{
+        display: flex;
+
+    }
+    .cot{
+        width: 50%;
+    }
+    .cot input{
+        width: 80%;
+        height: 32px;;
+    }  
+    .nut-dangnhap,
+    .nut-taotk
+    {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8px;
+    width: 80%;
+    padding: 18px 0;
+    color: yellow;
+    border: 0.5px solid rgb(140, 140, 42);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+    }
+
+    .nut-dangnhap:hover{
+        background-color: yellow;
+        color: black;
+    }
+    .mk input{
+        width: 60%;
+    }
+</style>
+<body>
+<div class="container">
+  <div class="head">
+    <div class="logo"><h1>CINEHUB</h1></div>
+    <div class="ttin">HỆ THỐNG QUẢN LÝ & ĐẶT VÉ<br>ĐĂNG NHẬP / ĐĂNG KÝ TÀI KHOẢN</div>
+  </div>
+  <hr class="dong-ke">
+  <div class="frames">
+ 
+    
+    <div class="login">
+        <h2>Đăng nhập</h2>
+        <label>Tài khoản</label>
+        <input type="text" id="taikhoan" placeholder="Nhập tên đăng nhập">
+        <br>
+        <label>Mật khẩu</label>
+        <input type="password" id="matkhau" placeholder="Nhập mật khẩu">
+        <br>
+        <a href="trangchu.html" class="nut-dangnhap">
+            ĐĂNG NHẬP →
+        </a>
+    </div>
+    <div class="soc-doc"></div>
+    <div class="register">
+      <h2>Đăng ký</h2>
+      <label>Tài khoản</label>
+        <input type="text" id="taikhoan" placeholder="Nhập tên đăng ký">
+        <br>
+        <div class="mk">
+            <div class="cot">
+                <label>Mật khẩu</label>
+                <input type="password" id="matkhau" placeholder="Tối thiểu 8 ký tự">
+            </div>
+            <div class="cot">
+                <label> Xác nhận </label>
+                <input type="password" id="xacnhan" placeholder="Nhập lại mật khẩu">
+            </div>
+        </div>
+        <br>
+        <a href="trangchu.html" class="nut-taotk">
+        TẠO TÀI KHOẢN →
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #0d0c11;
+    font-family: sans-serif;
+}
+.container{
+    background-color: #0d0c11;
+    width: 65%;
+    height: 100%;
+    position: relative;
+}
+.container h1{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    background-color: #0d0c11;
+    margin: 30px 0px;
+}
+.login-box{
+    background-color: #15151a;
+    min-height: 500px;
+    margin: 75px 0px;
+    flex: 1;
+    border: 1px solid gray;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.select-role{
+    width: 100%;
+    min-height: 200px;
+    background-color: #15151a;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 15px;
+}
+.select-role .select-button{
+    width: 48%;
+    height: 240px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    background-color: #1b1b20;
+    color: white;
+    margin: 1%;
+}
+.select-role .select-button.active{
+    border-color: gold;
+    background-color: #24211f;
+}
+@media (max-width: 550px){
+    .select-role{
+        flex-wrap: wrap;
+    }
+    .select-role .select-button{
+        width: 100%;
+        min-width: 170px;
+    }
+}
+.login{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+}
+.login label{
+    align-self: flex-start;
+    font-size: 13px;
+    color: #9A97A0;
+    margin-bottom: 7px;
+    margin-left: 5%;
+}
+.login #taikhoan, .login #matkhau{
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    background-color: #1b1b20;
+    border: none;
+    padding: 0px 0px 0px 20px;
+}
+.login .login-button{
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #d09b29;
+    border: none;
+    padding: 0px 0px 0px 20px;
+}
+.login a{
+    color: #a07e2b;
+    margin-bottom: 1%;
+}
+.login .login-button:hover{
+    background-color: #fcbc33;
+}
+.login a:hover{
+    color: #daa83b;
+}

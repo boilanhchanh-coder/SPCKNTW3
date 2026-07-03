@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #7a7880;
+}
+body{
+    display: flex;
+}
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    height: 100vh;
+    background-color: #0d0c11;
+}
+.ten-cinema{
+    font-family: sans-serif;
+    width: 100%;
+    height: 80px;
+    padding-left: 17px;
+    padding-top: 17px;
+}
+hr{
+    width: 100%;
+    color: #7a7880;
+}
+.ten-cinema h2{
+    margin: 0;
+    color: #d09b29;
+}
+.ten-cinema span{
+    font-size: 12px;
+}
+.quan-ly{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.quan-ly span{
+    width: 100%;
+    margin: 10px 0px 10px 10px;
+    font-size: small;
+}
+.quan-ly a{
+    width: 100%;
+    height: 40px;
+    padding: 7px 0px 0px 17px;
+    text-decoration: none;
+    color: #7a7880;
+}
+.quan-ly a:hover{
+    background-color: rgba(255,255,255,0.04);
+    color: white;
+}
