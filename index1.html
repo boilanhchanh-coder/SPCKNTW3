@@ -150,12 +150,12 @@
     <div class="login">
         <h2>Đăng nhập</h2>
         <label>Tài khoản</label>
-        <input type="text" id="taikhoan" placeholder="Nhập tên đăng nhập">
+        <input type="text" id="loginUser" placeholder="Nhập tên đăng nhập">
 
         <label>Mật khẩu</label>
-        <input type="password" id="matkhau" placeholder="Nhập mật khẩu">
+        <input type="password" id="loginPass" placeholder="Nhập mật khẩu">
         
-        <button class="button-login">
+        <button onclick="login()" class="button-login">
             ĐĂNG NHẬP →
         </button>
         <div class="forget">Quên mật khẩu</div>
@@ -164,20 +164,20 @@
     <div class="register">
       <h2>Đăng ký</h2>
       <label>Tài khoản</label>
-        <input type="text" id="taikhoan" placeholder="Nhập tên đăng ký">
+        <input type="text" id="regUser" placeholder="Nhập tên đăng ký">
         
         <div class="mk">
             <div class="cot">
                 <label>Mật khẩu</label>
-                <input type="password" id="matkhau" placeholder="Tối thiểu 8 ký tự">
+                <input type="password" id="regPass" placeholder="Tối thiểu 8 ký tự">
             </div>
             <div class="cot">
                 <label> Xác nhận </label>
-                <input type="password" id="xacnhan" placeholder="Nhập lại mật khẩu">
+                <input type="password" id="xac-nhan" placeholder="Nhập lại mật khẩu">
             </div>
         </div>
         
-        <button class="button-register">
+        <button onclick="register()" class="button-register">
         TẠO TÀI KHOẢN →
         </button>
     </div>

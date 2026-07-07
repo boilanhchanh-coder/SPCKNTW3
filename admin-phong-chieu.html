@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-phong-chieu.css">
+</head>
+<body>
+    <div class="side-bar">
+        <div class="ten-cinema">
+            <h2>CINEMA</h2>
+            <span>Hệ thống quản trị</span>
+        </div>
+        <div class="de-muc">
+            <span>QUẢN LÝ</span>
+            <a href="admin-phim.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+                <span>Phim</span>
+            </a>
+            <a href="admin-phong-chieu.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                </svg>
+                <span>Phòng chiếu</span>
+            </a>
+            <a href="admin-suat-chieu.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                </svg>
+                <span>Suất chiếu</span>
+            </a>
+        </div>
+        <div class="de-muc">
+            <span>BÁO CÁO</span>
+            <a href="admin-thong-ke.html">Thống kê</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="top-bar">
+            <div>
+                <span>Quản lý Phòng chiếu</span>
+            </div>
+            <div>Admin</div>
+        </div>
+        <div class="content">
+            <div class="title">
+                <div>Quản lý Phòng chiếu</div>
+                <button>Thêm phòng</button>
+            </div> 
+            <div class="so-lieu">
+                <div class="tong-phong">
+                    <div><span>Tổng phòng</span></div>
+                </div>
+                <div class="tong-ghe">
+                    <div><span>Tổng ghế</span></div>
+                </div>
+            </div>
+            <table class="bang-hien-thi-phong-chieu">
+                <thead>
+                    <tr>
+                        <td>TÊN PHÒNG</td>
+                        <td>SỐ HÀNG </td>
+                        <td>SỐ CỘT</td>
+                        <td>TỔNG GHẾ</td>
+                        <td>THAO TÁC</td>
+                    </tr>
+                </thead>
+                <tbody class="hien-thi-phong-chieu">
+                    <!--Viết JS-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

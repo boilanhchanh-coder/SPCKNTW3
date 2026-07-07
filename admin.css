@@ -7,6 +7,7 @@ html, body{
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #7a7880;
+    background-color: #0d0c11;
 }
 body{
     display: flex;
@@ -15,8 +16,11 @@ body{
     display: flex;
     flex-direction: column;
     width: 220px;
+    min-width: 220px;
     height: 100vh;
-    background-color: #0d0c11;
+    min-height: 100vh;
+    background-color: #15151a;
+    border: 1px solid rgba(255,255,255,0.08);
 }
 .ten-cinema{
     font-family: sans-serif;
@@ -24,36 +28,87 @@ body{
     height: 80px;
     padding-left: 17px;
     padding-top: 17px;
-}
-hr{
-    width: 100%;
-    color: #7a7880;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .ten-cinema h2{
     margin: 0;
     color: #d09b29;
 }
-.ten-cinema span{
+.ten-cinema span, .sidebar-footer span{
     font-size: 12px;
 }
-.quan-ly{
+.de-muc{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
-.quan-ly span{
+.de-muc > span{
     width: 100%;
     margin: 10px 0px 10px 10px;
     font-size: small;
+    font-weight: bold;
 }
-.quan-ly a{
+.de-muc a{
     width: 100%;
     height: 40px;
-    padding: 7px 0px 0px 17px;
+    padding: 7px 0px 0px 25px;
     text-decoration: none;
     color: #7a7880;
 }
-.quan-ly a:hover{
+a > span{
+    font-style: italic;
+}
+.de-muc a:hover{
     background-color: rgba(255,255,255,0.04);
     color: white;
+}
+.sidebar-footer{
+    margin-top: auto;
+    width: 100%;
+    height: 120px;
+    padding-left: 17px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+.name{
+    color: white;
+    font-weight: bold;
+}
+.exit-button{
+    width: 90%;
+    height: 35px;
+    margin-top: 15px;
+    background-color: #15151a;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #7a7880;
+}
+.main{
+    flex: 1;
+    height: 100vh;
+}
+.top-bar{
+    height: 60px;
+    background-color: #15151a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.top-bar div:first-child{
+    color: white;
+    font-weight: bold;
+}
+.top-bar div:last-child{
+    background-color: #d09b29;
+    color: black;
+    font-weight: bold;
+    font-size: small;
+    width: 60px;
+    height: 23px;
+    border-radius: 20px;
+    padding: 0px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
