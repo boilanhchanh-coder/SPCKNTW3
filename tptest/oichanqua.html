@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">CINEMA</div>
+        <div class="right">
+            <input type="text" class="search" placeholder="Tìm phim"...>
+            <button class="myinfor">Hồ sơ</button>
+        </div>
+    </header><hr class="dong-ke">
+    <section class="options">
+        <button class="chon">ĐANG CHIẾU</button>
+        <button>SẮP CHIẾU</button>
+    </section>
+    <section class="listphim">
+        <div class="overview">
+            <div class="thephim">
+                <div class="poster">
+                    <img src="images/colony.jpg" alt="Poster Colony">
+                    <span class="new hot">HOT</span>
+                    <span class="age">T16</span>
+                </div>
+                <h3>Colony : Bầy xác sống</h3>
+                <p>Hành động • Hồi hộp • Khoa học viễn tưởng </p>
+                <p>122 phút</p>
+                <div class="rate">★★★★★</div>
+                <button class="buy">MUA VÉ</button>
+            </div>
+            <div class="thephim">
+                <div class="poster">
+                    <img src="images/yourname.jpg" alt="Poster Your name">
+                    <span class="new hot">HOT</span>
+                    <span class="age">PG</span>
+                </div>
+                <h3>Your Name</h3>
+                <p> Hoạt hình • Lãng mạn • Giả tưởng </p>
+                <p>106 phút</p>
+                <div class="rate">★★★★★</div>
+                <button class="buy">MUA VÉ</button>
+            </div>
+            <div class="thephim">
+                <div class="poster">
+                    <img src="images/hoaingoc.jpg" alt="Poster Hoai Ngoc">
+                    <span class="new hot">HOT</span>
+                    <span class="age">PG</span>
+                </div>
+                <h3>Chú Thuật Hồi Chiến</h3>
+                <p> Hoạt hình • Hành động • Giả tưởng • Siêu Nhiên</p>
+                <p>111 phút</p>
+                <div class="rate">★★★★★</div>
+                <button class="buy">MUA VÉ</button>
+            </div>
+            <div class="thephim">
+                <div class="poster">
+                    <img src="images/doraemon.jpg" alt="Poster Doraemon">
+                    <span class="new hot">HOT</span>
+                    <span class="age">P</span>
+                </div>
+                <h3>Doraemon : Nobia và lâu đài dưới đáy biển</h3>
+                <p> Hoạt hình • Phiêu lưu </p>
+                <p>101 phút</p>
+                <div class="rate">★★★★★</div>
+                <button class="buy">MUA VÉ</button>
+            </div>
+            <div class="thephim">
+                <div class="poster">
+                    <img src="images/gohan.jpg" alt="Poster Gohan">
+                    <span class="new hot">HOT</span>
+                    <span class="age">K</span>
+                </div>
+                <h3>Tạm Biệt Gohan</h3>
+                <p> Gia Đình • Chính Kịch • Tình cảm • Phiêu lưu</p>
+                <p>140 phút</p>
+                <div class="rate">★★★★★</div>
+                <button class="buy">MUA VÉ</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+    *{
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+    }
+    body{
+        background-color:#0a0a09;
+        color:#d6cdcd; 
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .topbar{
+        width:100%;
+        height:80px;
+        background:#111;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:0 70px;
+    }
+    .logo{
+        display: flex;
+        margin-left: 50px;
+        font-family: 'Oswald', sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+    }
+    .right{
+        display:flex;
+        align-items:center;
+        gap:15px;
+    }
+    .search{
+        width:260px;
+        height:42px;
+        background:#1d1d1d;
+        border-radius:10px;
+        display:flex;
+        align-items:center;
+        padding:0 18px;
+        border: none;
+    }
+    .myinfor{
+        width:120px;
+        height:42px;
+        background:#e0743a;
+        color:white;
+        border-radius:10px;
+        font-weight:600;
+        border: none;
+    }
+    .dong-ke{
+        width: 100%;
+        height: 0.3px;
+        border: none;
+        background: #2b2a2a;
+        margin: 10px auto;
+    }
+    .options{
+        display: flex;
+        width: 90%;
+        gap: 25px;
+        margin: 30px auto;
+    }
+    .options button{
+        width: 180px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        background-color: #222;
+        color: white;
+    }
+    .chon{
+        background:#e0743a !important;
+    }
+    .listphim{
+        width:80%;
+        margin:auto;
+        margin-bottom:80px;
+    }
+    .overview{
+        display:grid;
+        grid-template-columns:repeat(5,1fr);
+        gap:35px;
+        }
+    .thephim{
+        background:#1b1b1b;
+        border-radius:12px;
+        overflow:hidden;
+        transition:.35s;
+        box-shadow:0 8px 20px rgba(0,0,0,.4);
+    }
+    .poster{
+        position:relative;
+        overflow:hidden;
+    }
+    .poster img{
+        width: 100%;
+        height:280px;
+        object-fit:cover;
+        transition:.5s;
+    }
+    .thephim h3{
+        margin:18px 18px 10px;
+        font-size:16px;
+    }
+    .thephim p{
+        margin-left:12px;
+        margin-right: 2px;
+        margin-bottom:6px;
+        color:#bdbdbd;
+        font-size:14px;
+    }
+    .thephim:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 40px rgba(224,116,58,.35);
+
+}
+    .rate{
+        margin:10px 12px;
+        color:#ffc107;
+        font-size:18px;
+    }
+    .new{
+        position:absolute;
+        right:15px;
+        top:15px;
+        background:#2196f3;
+        color:white;
+        padding:6px 14px;
+        border-radius:30px;
+        font-size:12px;
+        font-weight:bold;
+    }
+    .hot{
+        background:#e53935;
+    }
+    .age{
+        position:absolute;
+        left:15px;
+        top:15px;
+        width:45px;
+        height:45px;
+        background:#e0743a;
+        border-radius:50%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        color:white;
+        font-weight:bold;
+    }
+    .buy{
+        display: flex;
+        border: none;
+        width: 80%;
+        height:45px;
+        margin:18px auto 20px;
+        background:#e0743a;
+        color:white;
+        border-radius:8px;
+        font-weight:700;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .buy:hover{
+        background:#ff9258;
+    }
+</style>
