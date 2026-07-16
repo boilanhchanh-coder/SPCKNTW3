@@ -14,13 +14,6 @@
     border: 1px solid rgba(255,255,255,0.08);
     padding: 15px 0px 0px 25px;
 }
-.tong-phim div{
-    margin-bottom: 5px;
-}
-.so-luong-phim{
-    color: #e0743a;
-    font-size: 45px;
-}
 .title{
     margin-top: 10px;
     height: 50px;
@@ -49,77 +42,16 @@
     width: 96%;
     align-self: center;
     background-color: #15151a;
-    border-collapse: separate;
-    border-spacing: 0;
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 20px;
-    overflow: hidden;
     font-size: small;
+}
+thead{
+    align-items: center;
 }
 thead td{
     align-items: center;
-    padding: 7px 0px 7px 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    font-weight: bold;
-    font-size: smaller;
-}
-.hien-thi-phim td{
-    padding: 10px 0px 10px 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    color: white;
-}
-.ten-phim{
-    font-weight: bold;
-}
-select{
-    width: 100px;
-    height: auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 8px;
-    border-radius: 999px;
-    font-size: 10px;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-
-    letter-spacing: .2px;
-    background: rgba(34, 197, 94, .12);
-}
-.Đangchiếu{
-    background: rgba(76,175,125,0.15);
-    color: #4ADE80;
-    border: none;
-}
-.Sắpchiếu{
-    color: orange;
-    background:rgba(208,155,41,0.15);
-    border: none;
-}
-.Ngừngchiếu{
-    color: red;
-    background:rgba(224,85,85,0.15);
-    border: none;
-}
-.btn-xoa-phim{
-    width: 40px;
-    height: 25px;
-    border-radius: 5px;
-    background-color: rgba(224,85,85,0.15);
-    border: 1px solid red;
-    color: red;
-    font-weight: bold;
-    font-size: smaller;
-}
-.btn-suat-chieu{
-    width: 75px;
-    height: 25px;
-    border-radius: 5px;
-    border: 1px solid rgba(255,255,255,0.08);
-    background-color: #202028;
-    color: white;
-    font-weight: bold;
-    font-size: smaller;
+    padding: 2px 0px 2px 15px;
 }
 /*Modal Thêm phim*/
 .modal{
@@ -136,33 +68,11 @@ select{
     background-color: #0d0c11;
     width: 500px;
     height: 500px;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    overflow-y: auto;
-}
-::-webkit-scrollbar {
-    width: 10px;
-    background-color: #0d0c11;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-        180deg,
-    );
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-color: #15151a;
+    border-radius: 30px;
 }
 .modal-content > div{
     display: flex;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 30px;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -188,17 +98,17 @@ select{
 .form{
     flex-direction: column;
 }
-.tenphim, .mota{
+.tenphim, .mota, .trangthai{
     width: 100%;
     margin-bottom: 2%;
 }
 .form label{
     margin-bottom: 1%;
 }
-.tenphim, .mota{
+.tenphim, .mota, .trangthai{
     align-items: flex-start;
 }
-.tenphim input, .mota input, .theloai input, .thoiluong input{
+.tenphim input, .mota input, .trangthai input, .theloai input, .thoiluong input{
     width: 100%;
     color: white;
     padding-left: 5px;
@@ -209,7 +119,7 @@ select{
 .theloai, .thoiluong{
     width: 49%;
 }
-.theloai input, .thoiluong input, .tenphim input{
+.theloai input, .thoiluong input, .tenphim input, .trangthai input{
     height: 35px;
 }
 .mota input{
@@ -238,3 +148,4 @@ select{
     background-color:  #e0743a;
     font-weight: bold;
 }
+

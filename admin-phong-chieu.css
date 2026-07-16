@@ -42,10 +42,13 @@
     font-size: 30px;
     color: white;
 }
+.title span{
+    color: #e0743a;
+}
 .title button{
     width: 150px;
     height: 50px;
-    border-radius: 30px;
+    border-radius: 15px;
     border: none;
     background-color: #e0743a;
     font-weight: bold;

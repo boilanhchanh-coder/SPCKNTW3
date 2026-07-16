@@ -36,7 +36,12 @@
         </div>
         <div class="de-muc">
             <span>BÁO CÁO</span>
-            <a href="admin-thong-ke.html">Thống kê</a>
+            <a href="admin-thong-ke.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+                    <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1zm1 12h2V2h-2zm-3 0V7H7v7zm-5 0v-3H2v3z"/>
+                </svg>
+                <span>Thống kê</span>
+            </a>
         </div>
         <div class="sidebar-footer">
             <div class="name"><span>Admin</span></div>
@@ -54,11 +59,12 @@
         </div>
         <div class="content">
             <div class="title">
-                <div>Danh sách Phim</div>
+                <div>Danh sách <span>Phim</span></div>
                 <button onclick="openModal()">Thêm phim</button>
             </div> 
             <div class="tong-phim">
                 <div>Tổng phim</div>
+                <span class="so-luong-phim">0</span>
             </div>
             <table class="bang-hien-thi-phim">
                 <thead>
@@ -102,10 +108,6 @@
                     <label for="">Mô tả</label>
                     <input type="text" id="mo-ta">
                 </div>
-                <div class="trangthai">
-                    <label for="">Trạng thái</label>
-                    <input type="text" id="trang-thai">
-                </div>
                 <div class="modal-button">
                     <button onclick="closeModal()" class="cancel-button">Hủy</button>
                     <button class="save-button">Lưu phim</button>
@@ -113,7 +115,6 @@
             </div>
         </div>
     </div>
-
     <script src="data.js"></script>
     <script src="admin-phim.js"></script>
 </body>
