@@ -1,115 +1,127 @@
-*{
-    box-sizing: border-box;
-}
-html, body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-body{
-    display: flex;
-    justify-content: center;
-    background-color: #0d0c11;
-    font-family: sans-serif;
-}
-.container{
-    background-color: #0d0c11;
-    width: 65%;
-    height: 100%;
-    position: relative;
-}
-.container h1{
-    text-align: center;
-    color: white;
-    font-size: 50px;
-    background-color: #0d0c11;
-    margin: 30px 0px;
-}
-.login-box{
-    background-color: #15151a;
-    min-height: 500px;
-    margin: 75px 0px;
-    flex: 1;
-    border: 1px solid gray;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-}
-.select-role{
-    width: 100%;
-    min-height: 200px;
-    background-color: #15151a;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    border-radius: 15px;
-}
-.select-role .select-button{
-    width: 48%;
-    height: 240px;
-    border: 1px solid gray;
-    border-radius: 15px;
-    background-color: #1b1b20;
-    color: white;
-    margin: 1%;
-}
-.select-role .select-button.active{
-    border-color: gold;
-    background-color: #24211f;
-}
-@media (max-width: 550px){
-    .select-role{
-        flex-wrap: wrap;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-    .select-role .select-button{
-        width: 100%;
-        min-width: 170px;
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color:#0a0a09;
+        color:#d6cdcd; 
+
     }
-}
-.login{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1%;
-}
-.login label{
-    align-self: flex-start;
-    font-size: 13px;
-    color: #9A97A0;
-    margin-bottom: 7px;
-    margin-left: 5%;
-}
-.login #taikhoan, .login #matkhau{
-    width: 90%;
-    height: 40px;
-    border-radius: 10px;
-    margin-bottom: 7px;
-    background-color: #1b1b20;
+    .head{
+        display: flex;
+        justify-content:space-evenly;
+        margin-top: 40px;
+    }
+    .logo{
+        margin-right: 510px;
+        font-family: 'Oswald', sans-serif;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .cine{
+    color: white;
+    }
+
+    .hub{
+        color: #e0743a;
+    }
+    .ttin{
+        margin-right: 110px;
+        font-size: small;
+        color: #666;
+    }
+    .frames{
+        display: flex;
+        justify-content: space-between;
+    }
+   .dong-ke{
+    width: 72%;
+    height: 0.3px;
     border: none;
-    padding: 0px 0px 0px 20px;
-}
-.login .login-button{
-    width: 90%;
-    height: 40px;
-    border-radius: 10px;
-    margin-bottom: 7px;
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 15px;
-    background-color: #d09b29;
-    border: none;
-    padding: 0px 0px 0px 20px;
-}
-.login a{
-    color: #a07e2b;
-    margin-bottom: 1%;
-}
-.login .login-button:hover{
-    background-color: #fcbc33;
-}
-.login a:hover{
-    color: #daa83b;
-}
+    background: #666;
+    margin: 10px auto;
+    }
+    .register{
+        width: 60%;
+        height: 400px;
+        margin-top: 50px;
+        margin-right: 250px;
+        margin-left: 70px;
+
+    }
+    .soc-doc{
+    width: 1px;
+    background: #444;
+    height: 550px; 
+    margin-top: 50px;
+    }
+    .login{
+        width: 40%;
+        height: 400px;
+        margin-top: 50px;
+        margin-left: 300px;
+    }
+    input{
+        color:#666;
+        background-color: black;
+        border: 1px solid #666;
+        border-radius: 3px;
+        margin-bottom: 18px;
+        width: 80%;
+        height: 8%;
+        padding-left: 10px;
+    }
+    
+    label{
+        display: block;
+        margin-bottom: 5px;
+    }
+    .mk{
+        display: flex;
+
+    }
+    .cot{
+        width: 80%;
+    }
+    .cot input{
+        width: 60%;
+        height: 32px;;
+    }  
+    .mk input{
+        width: 60%;
+    }
+    .button-login,
+    .button-register{
+        width: 80%;
+        padding: 7px;
+        background-color: transparent;
+        border: 1px solid #e0743a;
+        border-radius: 2px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #e0743a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        transition: .2s;
+    }
+    .button-login:hover,
+    .button-register:hover{
+        background:#e0743a;
+         color:#0a0a09; 
+    }
+    .button-login svg, .button-register svg { width:16px; height:16px; transition:transform .2s; }
+    .button-login:hover svg, .button-register:hover svg { transform:translateX(4px); }
+    .forget{
+        margin-left: 250px;
+        font-size: 12px;
+        margin-top: 10px;
+        color: #666;
+        text-decoration: underline;
+        cursor: pointer;
+        
+    }

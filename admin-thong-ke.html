@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-phim.css">
+</head>
+<body>
+    <div class="side-bar">
+        <div class="ten-cinema">
+            <h2>CINEMA</h2>
+            <span>Hệ thống quản trị</span>
+        </div>
+        <div class="de-muc">
+            <span>QUẢN LÝ</span>
+            <a href="admin-phim.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                </svg>
+                <span>Phim</span>
+            </a>
+            <a href="admin-phong-chieu.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                </svg>
+                <span>Phòng chiếu</span>
+            </a>
+            <a href="admin-suat-chieu.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                </svg>
+                <span>Suất chiếu</span>
+            </a>
+        </div>
+        <div class="de-muc">
+            <span>BÁO CÁO</span>
+            <a href="admin-thong-ke.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+  <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1zm1 12h2V2h-2zm-3 0V7H7v7zm-5 0v-3H2v3z"/>
+</svg>
+                <span>Thống kê</span>
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <div class="name"><span>Admin</span></div>
+            <span>Quản trị viên</span>
+            <br>
+            <button onclick="logout()" class="exit-button">Đăng xuất</button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="top-bar">
+            <div>
+                <span>Thống kê Doanh thu</span>
+            </div>
+            <div class="admin">Admin</div>
+        </div>
+        <div class="content">
+            <div class="title">
+                <div>Danh sách Phim</div>
+                <button onclick="openModal()">Thêm phim</button>
+            </div> 
+            <div class="tong-phim">
+                <div>Tổng phim</div>
+            </div>
+            <table class="bang-hien-thi-phim">
+                <thead>
+                    <tr>
+                        <td>TÊN PHIM</td>
+                        <td>THỂ LOẠI</td>
+                        <td>THỜI LƯỢNG</td>
+                        <td>TRẠNG THÁI</td>
+                        <td>THAO TÁC</td>
+                    </tr>
+                </thead>
+                <tbody class="hien-thi-phim">
+                    <!--Viết JS-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--Modal Thêm phim-->
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Thêm phim mới</span>
+                <button onclick="closeModal()" class="modal-close">x</button>
+            </div>
+            <div class="form">
+                <div class="tenphim">
+                    <label for="ten-phim">Tên phim</label>
+                    <input type="text" id="ten-phim">
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 2%;">
+                    <div class="theloai">
+                        <label for="the-loai">Thể loại</label>
+                        <input type="text" id="the-loai">
+                    </div>
+                    <div class="thoiluong">
+                        <label for="thoi-luong">Thời lượng</label>
+                        <input type="text" id="thoi-luong">
+                    </div>
+                </div>
+                <div class="mota">
+                    <label for="">Mô tả</label>
+                    <input type="text" id="mo-ta">
+                </div>
+                <div class="trangthai">
+                    <label for="">Trạng thái</label>
+                    <input type="text" id="trang-thai">
+                </div>
+                <div class="modal-button">
+                    <button onclick="closeModal()" class="cancel-button">Hủy</button>
+                    <button class="save-button">Lưu phim</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="admin-phim.js"></script>
+</body>
+</html>

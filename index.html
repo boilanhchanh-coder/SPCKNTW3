@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="container">
+  <div class="head">
+    <div class="logo">
+    <div>
+        <span class="cine">CINE</span><span class="hub">HUB</span>
+    </div>
+    </div>
+    <div class="ttin">HỆ THỐNG QUẢN LÝ & ĐẶT VÉ<br>ĐĂNG NHẬP / ĐĂNG KÝ TÀI KHOẢN</div>
+  </div>
+  <hr class="dong-ke">
+  <div class="frames">
+ 
+    
+    <div class="login">
+        <h2>Đăng nhập</h2>
+        <label>Tài khoản</label>
+        <input type="text" id="loginUser" placeholder="Nhập tên đăng nhập">
+
+        <label>Mật khẩu</label>
+        <input type="password" id="loginPass" placeholder="Nhập mật khẩu">
+        
+        <button onclick="login()" class="button-login">
+            ĐĂNG NHẬP →
+        </button>
+        <div class="forget">Quên mật khẩu</div>
+    </div>
+    <div class="soc-doc"></div>
+    <div class="register">
+      <h2>Đăng ký</h2>
+      <label>Tài khoản</label>
+        <input type="text" id="regUser" placeholder="Nhập tên đăng ký">
+        
+        <div class="mk">
+            <div class="cot">
+                <label>Mật khẩu</label>
+                <input type="password" id="regPass" placeholder="Tối thiểu 8 ký tự">
+            </div>
+            <div class="cot">
+                <label> Xác nhận </label>
+                <input type="password" id="xac-nhan" placeholder="Nhập lại mật khẩu">
+            </div>
+        </div>
+        
+        <button onclick="register()" class="button-register">
+        TẠO TÀI KHOẢN →
+        </button>
+    </div>
+</body>
+<script src="data.js"></script>
+</html>

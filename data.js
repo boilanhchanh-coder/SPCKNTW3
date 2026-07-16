@@ -47,5 +47,5 @@ function login(){
 }
 //Đăng xuất
 function logout(){
-    location.href = "index1.html";
+    location.href = "index.html";
 }
