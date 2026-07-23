@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Modal Thêm phim mới</title>
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#0a0a0d;
+}
+.modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex; /* để xem trực tiếp, bình thường để "none" rồi bật bằng JS */
+    justify-content: center;
+    align-items: center;
+    background: rgb(0,0,0,0.8);
+    z-index: 999;
+}
+.modal-content{
+    background-color: #0d0c11;
+    width: 500px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 30px;
+}
+.modal-content > .modal-header{
+    display: flex;
+    border-radius: 30px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 0px 4% 0px 4%;
+}
+.modal-content span{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.modal-close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255,255,255,0.5);
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    border: 2px solid rgba(255,255,255,0.08);
+    background-color: #0d0c11;
+    cursor: pointer;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    padding: 0 4% 4%;
+}
+.tenphim, .mota, .trangthai{
+    width: 100%;
+    margin-bottom: 2%;
+}
+.form label{
+    display: block;
+    margin-bottom: 1%;
+    color: #c9c8ce;
+    font-size: 13px;
+}
+.tenphim input, .mota textarea, .trangthai select, .theloai select, .thoiluong input{
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background-color: #15151a;
+}
+.theloai, .thoiluong{
+    width: 49%;
+}
+.thoiluong input, .tenphim input, .trangthai select{
+    height: 35px;
+}
+.mota textarea{
+    height: 100px;
+    padding-top: 8px;
+    font-family: inherit;
+    resize: vertical;
+}
+.modal-button{
+    margin-top: 3%;
+    display: flex;
+    gap: 10px;
+}
+.cancel-button{
+    width: 60px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #15151a;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #7a7880;
+    cursor: pointer;
+}
+.save-button{
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e0743a;
+    font-weight: bold;
+    color: #2c1206;
+    cursor: pointer;
+}
+
+/* Ảnh phim - dạng dọc, preview lớn bên trái + gallery bên phải */
+.anhphim{
+    width: 100%;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 16px;
+}
+.anh-preview-wrap{
+    flex-shrink: 0;
+}
+.anh-preview{
+    width: 120px;
+    height: 180px;
+    border-radius: 8px;
+    border: 1px dashed rgba(255,255,255,0.15);
+    background-color: #15151a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.anh-preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+#anh-placeholder{
+    color: #7a7880;
+    font-size: 12px;
+    text-align: center;
+    padding: 0 8px;
+}
+.anh-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-content: flex-start;
+    padding-top: 26px;
+}
+.anh-item{
+    width: 52px;
+    height: 78px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid rgba(255,255,255,0.08);
+    opacity: 0.7;
+}
+.anh-item:hover{ opacity: 1; }
+.anh-item.selected{
+    border-color: #e0743a;
+    opacity: 1;
+}
+
+/* Thể loại - nhiều lựa chọn dạng chip checkbox */
+.theloai-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 90px;
+    overflow-y: auto;
+}
+.chip{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background-color: #15151a;
+    color: #c9c8ce;
+    font-size: 12px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+.chip input{
+    accent-color: #e0743a;
+    margin: 0;
+}
+.chip.checked{
+    border-color: #e0743a;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="modal" id="modal-them-phim">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span>Thêm phim mới</span>
+            <button onclick="closeModal()" class="modal-close">x</button>
+        </div>
+        <div class="form">
+
+            <div class="tenphim">
+                <label for="ten-phim">Tên phim</label>
+                <input type="text" id="ten-phim">
+            </div>
+
+            <!-- Chọn ảnh -->
+            <div class="anhphim">
+                <div class="anh-preview-wrap">
+                    <label>Ảnh phim</label>
+                    <div class="anh-preview">
+                        <img id="anh-xem-truoc" src="" alt="">
+                        <span id="anh-placeholder">Chưa chọn ảnh</span>
+                    </div>
+                </div>
+                <div class="anh-gallery" id="anh-gallery">
+                    <img class="anh-item" data-src="images/poster1.jpg" src="images/poster1.jpg">
+                    <img class="anh-item" data-src="images/poster2.jpg" src="images/poster2.jpg">
+                    <img class="anh-item" data-src="images/poster3.jpg" src="images/poster3.jpg">
+                    <img class="anh-item" data-src="images/poster4.jpg" src="images/poster4.jpg">
+                    <img class="anh-item" data-src="images/poster5.jpg" src="images/poster5.jpg">
+                    <img class="anh-item" data-src="images/poster6.jpg" src="images/poster6.jpg">
+                </div>
+                <input type="hidden" id="anh-phim">
+            </div>
+
+            <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:2%; gap: 2%;">
+                <!-- Thể loại: nhiều lựa chọn -->
+                <div class="theloai">
+                    <label>Thể loại</label>
+                    <div class="theloai-list" id="theloai-list">
+                        <!-- render bằng JS từ danhSachTheLoai -->
+                    </div>
+                </div>
+                <div class="thoiluong">
+                    <label for="thoi-luong">Thời lượng (phút)</label>
+                    <input type="number" id="thoi-luong" min="1">
+                </div>
+            </div>
+
+            <div class="mota">
+                <label for="mo-ta">Mô tả</label>
+                <textarea id="mo-ta"></textarea>
+            </div>
+
+            <div class="trangthai">
+                <label for="trang-thai">Trạng thái</label>
+                <select id="trang-thai">
+                    <option value="Sắp chiếu" selected>Sắp chiếu</option>
+                    <option value="Đang chiếu" disabled>Đang chiếu (cần có suất chiếu trước)</option>
+                    <option value="Ngừng chiếu">Ngừng chiếu</option>
+                </select>
+            </div>
+
+            <div class="modal-button">
+                <button onclick="closeModal()" class="cancel-button">Hủy</button>
+                <button class="save-button" onclick="themPhim()">Lưu phim</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Danh sách thể loại mẫu để demo hiển thị chip
+const danhSachTheLoai = ["Hành động", "Tình cảm", "Kinh dị", "Hài",
+                          "Hoạt hình", "Khoa học viễn tưởng", "Phiêu lưu", "Tâm lý"];
+
+function renderTheLoaiChips(){
+    const container = document.getElementById("theloai-list");
+    container.innerHTML = "";
+    danhSachTheLoai.forEach(function(tl){
+        const label = document.createElement("label");
+        label.className = "chip";
+        label.innerHTML = `<input type="checkbox" value="${tl}"> ${tl}`;
+        container.appendChild(label);
+    });
+}
+renderTheLoaiChips();
+
+// Toggle style chip khi tick/bỏ tick
+document.getElementById("theloai-list").addEventListener("change", function(e){
+    if (e.target.tagName === "INPUT"){
+        e.target.closest(".chip").classList.toggle("checked", e.target.checked);
+    }
+});
+
+// Chọn ảnh trong gallery
+document.getElementById("anh-gallery").addEventListener("click", function(e){
+    if (!e.target.classList.contains("anh-item")) return;
+
+    document.querySelectorAll(".anh-item").forEach(img => img.classList.remove("selected"));
+    e.target.classList.add("selected");
+
+    const src = e.target.dataset.src;
+    document.getElementById("anh-phim").value = src;
+
+    const preview = document.getElementById("anh-xem-truoc");
+    preview.src = src;
+    preview.style.display = "block";
+    document.getElementById("anh-placeholder").style.display = "none";
+});
+
+function closeModal(){
+    document.getElementById("modal-them-phim").style.display = "none";
+}
+function openModal(){
+    document.getElementById("modal-them-phim").style.display = "flex";
+}
+
+function themPhim(){
+    const tenPhim = document.getElementById("ten-phim").value.trim();
+    const anhPhim = document.getElementById("anh-phim").value;
+    const thoiLuong = parseInt(document.getElementById("thoi-luong").value, 10);
+    const moTa = document.getElementById("mo-ta").value.trim();
+    const trangThai = document.getElementById("trang-thai").value;
+
+    const checked = document.querySelectorAll("#theloai-list input:checked");
+    const theLoai = [];
+    checked.forEach(cb => theLoai.push(cb.value));
+
+    if (tenPhim === "" || !anhPhim || theLoai.length === 0 || isNaN(thoiLuong)){
+        alert("Vui lòng nhập đầy đủ tên phim, chọn ảnh, ít nhất 1 thể loại và thời lượng hợp lệ.");
+        return;
+    }
+
+    const phimMoi = { tenPhim, anhPhim, theLoai, thoiLuong, moTa, trangThai };
+    console.log("Phim mới:", phimMoi);
+    alert("Đã thêm phim (xem console để kiểm tra dữ liệu).");
+}
+</script>
+
+</body>
+</html>

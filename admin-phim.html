@@ -15,7 +15,7 @@
         </div>
         <div class="de-muc">
             <span>QUẢN LÝ</span>
-            <a href="admin-phim.html">
+            <a href="admin-phim.html" class="active">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
                     <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
                 </svg>
@@ -94,10 +94,36 @@
                     <label for="ten-phim">Tên phim</label>
                     <input type="text" id="ten-phim">
                 </div>
+                <div class="anhphim">
+                    <div>
+                        <label>Ảnh phim</label>
+                        <div class="anh-preview">
+                            <img id="anh-xem-truoc" src="" alt="">
+                            <span id="anh-placeholder">Chưa chọn ảnh</span>
+                        </div>
+                    </div>
+                    <div class="anh-gallery" id="anh-gallery">
+                        <img class="anh-item" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10">
+                        <img class="anh-item" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10">
+                        <img class="anh-item" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10">
+                        <img class="anh-item" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10">
+                        <img class="anh-item" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10">
+                        <img class="anh-item" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10">
+                        <img class="anh-item" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10">
+                        <img class="anh-item" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10">
+                        <img class="anh-item" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10">
+                        <img class="anh-item" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10">
+                        <img class="anh-item" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT44uISY_4bSR6dR0XOJR72WaR4sfaGCeQTPcS8KccP-w&s=10">
+                    </div>
+                    <input type="hidden" id="anh-phim">
+                </div>
+                <div></div>
                 <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 2%;">
                     <div class="theloai">
-                        <label for="the-loai">Thể loại</label>
-                        <input type="text" id="the-loai">
+                        <label>Thể loại</label>
+                        <div class="theloai-list" id="theloai-list">
+                            <!-- render bằng JS từ danhSachTheLoai -->
+                        </div>
                     </div>
                     <div class="thoiluong">
                         <label for="thoi-luong">Thời lượng</label>
@@ -105,12 +131,12 @@
                     </div>
                 </div>
                 <div class="mota">
-                    <label for="">Mô tả</label>
-                    <input type="text" id="mo-ta">
+                    <label for="mo-ta">Mô tả</label>
+                    <textarea id="mo-ta"></textarea>
                 </div>
                 <div class="modal-button">
                     <button onclick="closeModal()" class="cancel-button">Hủy</button>
-                    <button class="save-button">Lưu phim</button>
+                    <button onclick="themPhim()" class="save-button">Lưu phim</button>
                 </div>
             </div>
         </div>

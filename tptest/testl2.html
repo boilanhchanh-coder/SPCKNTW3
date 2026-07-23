@@ -7,83 +7,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <header class="topbar">
         <div class="logo">CINEMA</div>
         <div class="right">
-            <input type="text" class="search" placeholder="Tìm phim"...>
+            <div class="tim-kiem">
+                <input type="text" class="search" placeholder="Tìm phim">
+                <i class="fa-solid fa-magnifying-glass kinh-lup"></i>
+            </div>
             <button class="myinfor">Hồ sơ</button>
         </div>
     </header><hr class="dong-ke">
     <section class="options">
-        <button class="chon">ĐANG CHIẾU</button>
-        <button>SẮP CHIẾU</button>
+        <button id="dangChieu" class="chon">ĐANG CHIẾU</button>
+        <button id="sapChieu">SẮP CHIẾU</button>
     </section>
     <section class="listphim">
-        <div class="overview">
-            <div class="thephim">
-                <div class="poster">
-                    <img src="images/colony.jpg" alt="Poster Colony">
-                    <span class="new hot">HOT</span>
-                    <span class="age">T16</span>
-                </div>
-                <h3>Colony : Bầy xác sống</h3>
-                <p>Hành động • Hồi hộp • Khoa học viễn tưởng </p>
-                <p>122 phút</p>
-                <div class="rate">★★★★★</div>
-                <button class="buy">MUA VÉ</button>
-            </div>
-            <div class="thephim">
-                <div class="poster">
-                    <img src="images/yourname.jpg" alt="Poster Your name">
-                    <span class="new hot">HOT</span>
-                    <span class="age">PG</span>
-                </div>
-                <h3>Your Name</h3>
-                <p> Hoạt hình • Lãng mạn • Giả tưởng </p>
-                <p>106 phút</p>
-                <div class="rate">★★★★★</div>
-                <button class="buy">MUA VÉ</button>
-            </div>
-            <div class="thephim">
-                <div class="poster">
-                    <img src="images/hoaingoc.jpg" alt="Poster Hoai Ngoc">
-                    <span class="new hot">HOT</span>
-                    <span class="age">PG</span>
-                </div>
-                <h3>Chú Thuật Hồi Chiến</h3>
-                <p> Hoạt hình • Hành động • Giả tưởng • Siêu Nhiên</p>
-                <p>111 phút</p>
-                <div class="rate">★★★★★</div>
-                <button class="buy">MUA VÉ</button>
-            </div>
-            <div class="thephim">
-                <div class="poster">
-                    <img src="images/doraemon.jpg" alt="Poster Doraemon">
-                    <span class="new hot">HOT</span>
-                    <span class="age">P</span>
-                </div>
-                <h3>Doraemon : Nobia và lâu đài dưới đáy biển</h3>
-                <p> Hoạt hình • Phiêu lưu </p>
-                <p>101 phút</p>
-                <div class="rate">★★★★★</div>
-                <button class="buy">MUA VÉ</button>
-            </div>
-            <div class="thephim">
-                <div class="poster">
-                    <img src="images/gohan.jpg" alt="Poster Gohan">
-                    <span class="new hot">HOT</span>
-                    <span class="age">K</span>
-                </div>
-                <h3>Tạm Biệt Gohan</h3>
-                <p> Gia Đình • Chính Kịch • Tình cảm • Phiêu lưu</p>
-                <p>140 phút</p>
-                <div class="rate">★★★★★</div>
-                <button class="buy">MUA VÉ</button>
-            </div>
-        </div>
+        <div class="overview" id="overview"></div>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
 <style>
@@ -121,15 +66,34 @@
         align-items:center;
         gap:15px;
     }
+    .tim-kiem{
+    position: relative;
+    }
+
     .search{
         width:260px;
         height:42px;
         background:#1d1d1d;
+        border:none;
         border-radius:10px;
-        display:flex;
-        align-items:center;
-        padding:0 18px;
-        border: none;
+        color:white;
+        padding:0 45px 0 18px;
+        outline:none;
+    }
+
+    .kinh-lup{
+        position:absolute;
+        right:15px;
+        top:50%;
+        transform:translateY(-50%);
+        color:#888;
+        font-size:16px;
+        cursor:pointer;
+        transition:.3s;
+    }
+
+    .kinh-lup:hover{
+        color:#e0743a;
     }
     .myinfor{
         width:120px;
@@ -165,13 +129,13 @@
         background:#e0743a !important;
     }
     .listphim{
-        width:80%;
+        width:90%;
         margin:auto;
         margin-bottom:80px;
     }
     .overview{
         display:grid;
-        grid-template-columns:repeat(5,1fr);
+        grid-template-columns:repeat(4,1fr);
         gap:35px;
         }
     .thephim{
@@ -180,6 +144,8 @@
         overflow:hidden;
         transition:.35s;
         box-shadow:0 8px 20px rgba(0,0,0,.4);
+        display: flex;
+        flex-direction: column;
     }
     .poster{
         position:relative;
@@ -187,7 +153,7 @@
     }
     .poster img{
         width: 100%;
-        height:280px;
+        height:320px;
         object-fit:cover;
         transition:.5s;
     }
@@ -253,8 +219,36 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+
+
+        
+        width:80%;
+        height:45px;
+        border:none;
+        border-radius:8px;
+        background:#e0743a;
+        color:white;
+        font-weight:700;
+        margin-top:auto;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:20px;
     }
     .buy:hover{
         background:#ff9258;
+    }
+    .thephim h3{
+    margin:18px 18px 10px;
+    font-size:16px;
+    }
+
+    .ten-phim{
+        color:white;
+        text-decoration:none;
+    }
+
+    .ten-phim:hover{
+        text-decoration:underline;
+        cursor:pointer;
     }
 </style>

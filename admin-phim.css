@@ -45,6 +45,9 @@
     background-color:  #e0743a;
     font-weight: bold;
 }
+.title button:hover{
+    background-color: #c9622e;
+}
 .bang-hien-thi-phim{
     width: 96%;
     align-self: center;
@@ -82,7 +85,6 @@ select{
     font-size: 10px;
     font-weight: bold;
     font-family: Arial, sans-serif;
-
     letter-spacing: .2px;
     background: rgba(34, 197, 94, .12);
 }
@@ -111,6 +113,10 @@ select{
     font-weight: bold;
     font-size: smaller;
 }
+.btn-xoa-phim:hover{
+    background-color: red;
+    color: white;
+}
 .btn-suat-chieu{
     width: 75px;
     height: 25px;
@@ -126,7 +132,7 @@ select{
     width: 100%;
     height: 100%;
     position: fixed;
-    display: none;
+    display: none; /*Sửa lại sau*/
     justify-content: center;
     align-items: center;
     background: rgb(0,0,0,0.8);
@@ -188,6 +194,63 @@ select{
 .form{
     flex-direction: column;
 }
+.anhphim{
+    width: 100%;
+    margin-bottom: 2%;
+    display: flex;
+    gap: 16px;
+}
+.anh-preview{
+    width: 120px;
+    height: 180px;
+    border-radius: 8px;
+    border: 1px dashed rgba(255,255,255,0.15);
+    background-color: #15151a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.anh-preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+#anh-placeholder{
+    color: #7a7880;
+    font-size: 16px;
+    text-align: center;
+    padding: 0 8px;
+}
+.anh-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 26px;
+}
+.anh-item{
+    width: 52px;
+    height: 78px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid rgba(255,255,255,0.08);
+    opacity: 0.7;   
+}
+.anh-item:hover{
+    opacity: 1;
+}
+.anh-item.selected{
+    border-color: #e0743a;
+    opacity: 1;
+}
+.theloai-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 90px;
+    overflow-y: auto;
+}
 .tenphim, .mota{
     width: 100%;
     margin-bottom: 2%;
@@ -198,7 +261,7 @@ select{
 .tenphim, .mota{
     align-items: flex-start;
 }
-.tenphim input, .mota input, .theloai input, .thoiluong input{
+.tenphim input, .mota textarea, .thoiluong input{
     width: 100%;
     color: white;
     padding-left: 5px;
@@ -209,10 +272,10 @@ select{
 .theloai, .thoiluong{
     width: 49%;
 }
-.theloai input, .thoiluong input, .tenphim input{
+.thoiluong input, .tenphim input{
     height: 35px;
 }
-.mota input{
+.mota textarea{
     height: 120px;
 }
 .form label{
