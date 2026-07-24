@@ -60,7 +60,7 @@
         <div class="content">
             <div class="title">
                 <div>Quản lý <span>Phòng chiếu</span></div>
-                <button onclick="openModal()">Thêm phòng</button>
+                <button onclick="openModal('modalThemPhong')">Thêm phòng</button>
             </div> 
             <div class="so-lieu">
                 <div class="tong-phong">
@@ -89,12 +89,12 @@
             </table>
         </div>
     </div>
-    <!--Modal-->
-    <div class="modal">
+    <!--Modal Thêm phim-->
+    <div class="modal" id="modalThemPhong">
         <div class="modal-content">
             <div class="modal-header">
                 <span>Thêm phòng</span>
-                <button onclick="closeModal()" class="modal-close">x</button>
+                <button onclick="closeModal('modalThemPhong')" class="modal-close">x</button>
             </div>
             <div class="form">
                 <div class="tenphong">
@@ -119,7 +119,26 @@
                     </select>
                 </div>
                 <div class="modal-button">
-                    <button onclick="closeModal()" class="cancel-button">Hủy</button>
+                    <button onclick="closeModal('modalThemPhong')" class="cancel-button">Hủy</button>
+                    <button onclick="themPhong()" class="save-button">Thêm phòng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Sơ đồ ghế-->
+    <div class="modal" id="modalSoDoGhe">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Sơ đồ ghế - Phòng <span id="htTenPhong"></span></span>
+                <button onclick="closeModal('modalSoDoGhe')" class="modal-close">x</button>
+            </div>
+            <div class="form">
+                <div class="man-hinh">==MÀN HÌNH==</div>
+                <div class="sodoghe" id="so-do-ghe">
+                    <!--JS-->
+                </div>
+                <div class="modal-button">
+                    <button onclick="closeModal('modalSoDoGhe')" class="cancel-button">Hủy</button>
                     <button onclick="themPhong()" class="save-button">Thêm phòng</button>
                 </div>
             </div>

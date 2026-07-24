@@ -150,12 +150,12 @@ function phongCoSan(){
 }
 phongCoSan();
 //Đóng mở modal Thêm phim
-function openModal(){
-    let ok = document.querySelector(".modal");
+function openModal(id){
+    let ok = document.getElementById(id);
     ok.style.display = "flex";
 };
-function closeModal(){
-    let ok = document.querySelector(".modal");
+function closeModal(id){
+    let ok = document.getElementById(id);
     ok.style.display = "none";
 }
 //Hàm tạo ID

@@ -60,7 +60,7 @@
         <div class="content">
             <div class="title">
                 <div>Danh sách <span>Phim</span></div>
-                <button onclick="openModal()">Thêm phim</button>
+                <button onclick="openModal('modalThemPhim')">Thêm phim</button>
             </div> 
             <div class="tong-phim">
                 <div>Tổng phim</div>
@@ -83,11 +83,11 @@
         </div>
     </div>
     <!--Modal Thêm phim-->
-    <div class="modal">
+    <div class="modal" id="modalThemPhim">
         <div class="modal-content">
             <div class="modal-header">
                 <span>Thêm phim mới</span>
-                <button onclick="closeModal()" class="modal-close">x</button>
+                <button onclick="closeModal('modalThemPhim')" class="modal-close">x</button>
             </div>
             <div class="form">
                 <div class="tenphim">
@@ -135,7 +135,7 @@
                     <textarea id="mo-ta"></textarea>
                 </div>
                 <div class="modal-button">
-                    <button onclick="closeModal()" class="cancel-button">Hủy</button>
+                    <button onclick="closeModal('modalThemPhim')" class="cancel-button">Hủy</button>
                     <button onclick="themPhim()" class="save-button">Lưu phim</button>
                 </div>
             </div>
