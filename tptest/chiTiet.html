@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết phim</title>
+        <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+
+body{
+    margin:0;
+    background:#0a0a09;
+    color:white;
+    font-family:Poppins,sans-serif;
+}
+
+.topbar{
+    width:100%;
+    height:80px;
+    background:#111;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 70px;
+}
+
+.logo{
+    margin-left:50px;
+    font-family:'Oswald',sans-serif;
+    font-size:30px;
+    font-weight:bold;
+    color:white;
+}
+
+.right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.tim-kiem{
+    position:relative;
+}
+
+.search{
+    width:260px;
+    height:42px;
+    background:#1d1d1d;
+    border:none;
+    border-radius:10px;
+    color:white;
+    padding:0 45px 0 18px;
+    outline:none;
+}
+
+.kinh-lup{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#888;
+}
+
+.myinfor{
+    width:120px;
+    height:42px;
+    background:#e0743a;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-weight:600;
+}
+
+.dong-ke{
+    border:none;
+    height:1px;
+    background:#2b2a2a;
+    margin:10px 0;
+}
+
+#chiTiet{
+    width:90%;
+    margin:40px auto;
+}
+.chi-tiet{
+    width:90%;
+    margin:50px auto;
+    display:flex;
+    gap:50px;
+    align-items:flex-start;
+}
+
+.anh-phim{
+    width:320px;
+    height:470px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.thong-tin{
+    flex:1;
+}
+
+.thong-tin h1{
+    font-size:42px;
+    margin-top:0;
+}
+
+.thong-tin p{
+    font-size:18px;
+    color:#ccc;
+    line-height:35px;
+}
+
+.poster img{
+    width:320px;
+    height:470px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.info{
+    flex:1;
+}
+
+.info h1{
+    font-size:42px;
+    margin-bottom:25px;
+}
+
+.info p{
+    margin:15px 0;
+    color:#ccc;
+    font-size:18px;
+}
+
+.thong-tin-phim{
+    display:flex;
+    gap:50px;
+    align-items:flex-start;
+}
+.buy{
+    margin-top:35px;
+    width:180px;
+    height:50px;
+    border:none;
+    border-radius:8px;
+    background:#e0743a;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.buy:hover{
+    background:#ff9258;
+}
+
+.noi-dung{
+    margin-top:60px;
+}
+
+.noi-dung h2{
+    margin-bottom:20px;
+}
+
+.noi-dung p{
+    line-height:1.8;
+    color:#ccc;
+}
+
+</style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">CINEMA</div>
+
+        <div class="right">
+            <div class="tim-kiem">
+                <input type="text" class="search" placeholder="Tìm phim">
+                <i class="fa-solid fa-magnifying-glass kinh-lup"></i>
+            </div>
+
+            <button class="myinfor">Hồ sơ</button>
+        </div>
+    </header>
+
+    <hr class="dong-ke">
+
+    <div id="chiTiet"></div>
+
+    <script src="chitiet.js"></script>
+
+</body>
+
+</body>
+</html>
