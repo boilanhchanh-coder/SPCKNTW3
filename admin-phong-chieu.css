@@ -29,6 +29,13 @@
     border: 1px solid rgba(255,255,255,0.08);
     padding: 15px 0px 0px 25px;
 }
+.tong-phong div, .tong-ghe div{
+    margin-bottom: 5px;
+}
+.so-luong-phong, .tong-so-luong-ghe{
+    color: #e0743a;
+    font-size: 45px;
+}
 .title{
     margin-top: 10px;
     height: 50px;
@@ -57,14 +64,49 @@
     width: 96%;
     align-self: center;
     background-color: #15151a;
+    border-collapse: separate;
+    border-spacing: 0;
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 20px;
+    overflow: hidden;
     font-size: small;
-}
-thead{
-    align-items: center;
 }
 thead td{
     align-items: center;
-    padding: 2px 0px 2px 15px;
+    padding: 7px 0px 7px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-weight: bold;
+    font-size: smaller;
+}
+.ten-phong{
+    font-weight: bold;
+}
+.hien-thi-phong-chieu td{
+    padding: 10px 0px 10px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: white;
+}
+.btn-xoa-phim{
+    width: 40px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: rgba(224,85,85,0.15);
+    border: 1px solid red;
+    color: red;
+    font-weight: bold;
+    font-size: smaller;
+}
+.btn-xoa-phim:hover{
+    background-color: red;
+    color: white;
+}
+.btn-so-do{
+    width: 75px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background-color: #202028;
+    color: white;
+    font-weight: bold;
+    font-size: smaller;
 }

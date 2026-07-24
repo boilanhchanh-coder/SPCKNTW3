@@ -49,11 +49,17 @@ function login(){
 function logout(){
     location.href = "index.html";
 }
+
+
+//Danh sách Thể loại
+let danhSachTheLoai = ["Hoạt hình", "Phiêu lưu", "Hành động",
+                       "Khoa học viễn tưởng", "Gia đình", "Chính kịch",
+                       "Giả tưởng", "Kinh dị", "Hài hước", "Lãng mạn"]
 //Danh sách Phim có sẵn
 function phimCoSan(){
     let phim = getData("danhSachPhim");
     if (phim.length === 0){
-        let danhSachBanDau = [
+        let phimBanDau = [
             {
                 tenPhim: "Colony: Bầy xác sống",
                 theLoai: ["Hành động", "Kinh dị", "Khoa học viễn tưởng"],
@@ -100,11 +106,46 @@ function phimCoSan(){
                 id: 5
             },
         ];
-        saveData("danhSachPhim", danhSachBanDau);
+        saveData("danhSachPhim", phimBanDau);
     }
 }
 phimCoSan();
-//Danh sách Thể loại
-let danhSachTheLoai = ["Hoạt hình", "Phiêu lưu", "Hành động",
-                       "Khoa học viễn tưởng", "Gia đình", "Chính kịch",
-                       "Giả tưởng", "Kinh dị", "Hài hước", "Lãng mạn"]
+//Giá vé phòng
+let bangGiaVe = {
+    "Thường": 60000,
+    "VIP": 90000,
+};
+//Danh sách phòng có sẵn
+function phongCoSan(){
+    let phong = getData("danhSachPhong");
+    if (phong.length == 0){
+        let phongBanDau = [
+            {
+                tenPhong: "Phòng 1",
+                soHang: 8,
+                soGheMoiHang: 10,
+                loaiVe: "Thường",
+                id: 1
+            },
+            {
+                tenPhong: "Phòng 2",
+                soHang: 6,
+                soGheMoiHang: 8,
+                loaiVe: "VIP",
+                id: 2
+            },
+            {
+                tenPhong: "Phòng 3",
+                soHang: 10,
+                soGheMoiHang: 12,
+                loaiVe: "Thường",
+                id: 3
+            }
+        ]
+        phongBanDau.forEach(p => {
+            p.giaVe = bangGiaVe[p.loaiVe];
+        })
+        saveData("danhSachPhong", phongBanDau);
+    }
+}
+phongCoSan();

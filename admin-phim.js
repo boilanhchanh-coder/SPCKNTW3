@@ -6,12 +6,11 @@ function soLuongPhim(){
 }
 soLuongPhim();
 //Hiển thị danh sách Phim
-function renderDanhSachPhim(mangHienThi){
+function renderDanhSachPhim(){
     let danhSachPhim = getData("danhSachPhim");
-    let mang = mangHienThi || danhSachPhim;
     let bangHienThi = document.querySelector(".hien-thi-phim");
     bangHienThi.innerHTML = "";
-    mang.forEach(phim => {
+    danhSachPhim.forEach(phim => {
         let row = document.createElement("tr");
         row.innerHTML = `  
             <td class="ten-phim">${phim.tenPhim}</td>

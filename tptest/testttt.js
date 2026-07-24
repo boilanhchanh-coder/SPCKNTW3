@@ -25,7 +25,7 @@ let dangChieu = [
         anh: "images/movn.jpg",
         
     },
-    {
+    {   
         id:4,
         ten: "Doraemon : Nobita và lâu đài dưới đáy biển",
         theloai: "Hoạt hình • Phiêu lưu",
@@ -49,7 +49,7 @@ let dangChieu = [
         anh: "images/amanh.jpg",
         
     },
-    {
+    { 
         id:7,
         ten: "Chú Thuật Hồi Chiến",
         theloai: "Hoạt hình • Hành động • Giả tưởng • Siêu nhiên",
@@ -180,41 +180,46 @@ function hienThi(dsPhim){
         the.innerHTML = `
         <div class="poster">
             <img src="${phim.anh}">
+            
+
+           
         </div>
+
         <h3>
-        <a href="chiTiet.html?id=${phim.id}" class="ten-phim">
-            ${phim.ten}
-        </a>
-    </h3>
+            <a href="chiTiet.html?id=${phim.id}" class="ten-phim">
+                ${phim.ten}
+            </a>
+        </h3>
+
         <p>${phim.theloai}</p>
+
         <p>${phim.thoiluong}</p>
+
+
         <button class="buy">MUA VÉ</button>
         `;
+
         overview.appendChild(the);
     }
 }
+hienThi(dangChieu);
 let btnDang = document.getElementById("dangChieu");
 let btnSap = document.getElementById("sapChieu");
 
-let tab = localStorage.getItem("tab");
+btnDang.onclick = function(){
 
-    
-btnDang.onclick = function () {
-    localStorage.setItem("tab", "dang");
-    hienThi(dangChieu); 
+    hienThi(dangChieu);
+
     btnDang.classList.add("chon");
     btnSap.classList.remove("chon");
+
 }
-btnSap.onclick = function () {
-    localStorage.setItem("tab", "sap");
+
+btnSap.onclick = function(){
+
     hienThi(sapChieu);
+
     btnSap.classList.add("chon");
     btnDang.classList.remove("chon");
-}
-if (tab == "sap") {
-    hienThi(sapChieu);  
-    btnSap.classList.add("chon");
-} else {
-    hienThi(dangChieu);
-    btnDang.classList.add("chon");
+
 }
