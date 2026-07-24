@@ -43,15 +43,6 @@ function doiTrangThai(id, trangThaiMoi){
     saveData("danhSachPhim", danhSachPhim);
     renderDanhSachPhim();
 }
-//Đóng mở modal Thêm phim
-function openModal(){
-    let ok = document.querySelector(".modal");
-    ok.style.display = "flex";
-};
-function closeModal(){
-    let ok = document.querySelector(".modal");
-    ok.style.display = "none";
-}
 //Modal thêm phim
 document.getElementById("anh-gallery").addEventListener("click", e => {
     if (!e.target.classList.contains("anh-item")) return;
@@ -77,11 +68,6 @@ function renderTheLoai(){
     });
 }
 renderTheLoai();
-//Hàm tạo ID
-function taoIdMoi(danhSachPhim){
-    let idLonNhat = Math.max(...danhSachPhim.map(p => p.id));
-    return idLonNhat + 1;
-}
 //Thêm phim
 function themPhim(){
     let danhSachPhim = getData("danhSachPhim")
@@ -109,6 +95,12 @@ function themPhim(){
     saveData("danhSachPhim", danhSachPhim);
     soLuongPhim();
     renderDanhSachPhim();
+    document.getElementById("ten-phim").value = "";
+    document.getElementById("thoi-luong").value = "";
+    document.getElementById("mo-ta").value = "";
+    document.querySelectorAll("#theloai-list input:checked").forEach(cb => {
+        cb.checked = false;
+    });
     closeModal();
 }
 //Xóa phim

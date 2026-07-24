@@ -60,7 +60,7 @@
         <div class="content">
             <div class="title">
                 <div>Quản lý <span>Phòng chiếu</span></div>
-                <button>Thêm phòng</button>
+                <button onclick="openModal()">Thêm phòng</button>
             </div> 
             <div class="so-lieu">
                 <div class="tong-phong">
@@ -89,7 +89,42 @@
             </table>
         </div>
     </div>
-
+    <!--Modal-->
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Thêm phòng</span>
+                <button onclick="closeModal()" class="modal-close">x</button>
+            </div>
+            <div class="form">
+                <div class="tenphong">
+                    <label for="ten-phong">Tên phòng</label>
+                    <input type="text" id="ten-phong">
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 2%;">
+                    <div class="soghemoihang">
+                        <label for="so-hang">Số hàng</label>
+                        <input type="text" id="so-hang">
+                    </div>
+                    <div class="soghemoihang">
+                        <label for="so-ghe-moi-hang">Số ghế mỗi hàng</label>
+                        <input type="text" id="so-ghe-moi-hang">
+                    </div>
+                </div>
+                <div class="loaive">
+                    <label for="mo-ta">Loại vé</label>
+                    <select name="" id="loai-ve">
+                        <option value="Thường">Thường</option>
+                        <option value="VIP">VIP</option>
+                    </select>
+                </div>
+                <div class="modal-button">
+                    <button onclick="closeModal()" class="cancel-button">Hủy</button>
+                    <button onclick="themPhong()" class="save-button">Thêm phòng</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="data.js"></script>
     <script src="admin-phong-chieu.js"></script>
 </body>

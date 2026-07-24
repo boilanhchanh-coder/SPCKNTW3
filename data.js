@@ -121,21 +121,21 @@ function phongCoSan(){
     if (phong.length == 0){
         let phongBanDau = [
             {
-                tenPhong: "Phòng 1",
+                tenPhong: "1",
                 soHang: 8,
                 soGheMoiHang: 10,
                 loaiVe: "Thường",
                 id: 1
             },
             {
-                tenPhong: "Phòng 2",
+                tenPhong: "2",
                 soHang: 6,
                 soGheMoiHang: 8,
                 loaiVe: "VIP",
                 id: 2
             },
             {
-                tenPhong: "Phòng 3",
+                tenPhong: "3",
                 soHang: 10,
                 soGheMoiHang: 12,
                 loaiVe: "Thường",
@@ -149,3 +149,17 @@ function phongCoSan(){
     }
 }
 phongCoSan();
+//Đóng mở modal Thêm phim
+function openModal(){
+    let ok = document.querySelector(".modal");
+    ok.style.display = "flex";
+};
+function closeModal(){
+    let ok = document.querySelector(".modal");
+    ok.style.display = "none";
+}
+//Hàm tạo ID
+function taoIdMoi(danhSachPhim){
+    let idLonNhat = Math.max(...danhSachPhim.map(p => p.id));
+    return idLonNhat + 1;
+}
