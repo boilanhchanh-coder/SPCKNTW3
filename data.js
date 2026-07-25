@@ -213,6 +213,14 @@ function phongCoSan(){
     }
 }
 phongCoSan();
+//Danh sách suất chiếu
+function suatChieuCoSan(){
+    let suat = getData("danhSachSuatChieu");
+    if (suat.length === 0){
+        saveData("danhSachSuatChieu", []);
+    }
+}
+suatChieuCoSan();
 //Đóng mở modal Thêm phim
 function openModal(id){
     let ok = document.getElementById(id);

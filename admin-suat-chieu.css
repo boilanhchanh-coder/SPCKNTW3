@@ -45,3 +45,98 @@ thead td{
     align-items: center;
     padding: 2px 0px 2px 15px;
 }
+/*Modal thêm phòng chiếu*/
+.modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0,0,0,0.8);
+    z-index: 999;
+}
+.modal-content{
+    background-color: #0d0c11;
+    width: 500px;
+    height: 350px;
+    border-radius: 30px;
+    overflow-y: auto;
+    border: 1px solid rgba(255,255,255,0.08);
+
+}
+.modal-content > div{
+    display: flex;
+    border-radius: 30px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 0px 4% 0px 4%;
+}
+.modal-content span{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.modal-close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255,255,255,0.08);
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    border: 2px solid rgba(255,255,255,0.08);
+    background-color: #0d0c11;
+}
+.form{
+    flex-direction: column;
+}
+.chonphim, .chonphong{
+    width: 100%;
+    margin-bottom: 2%;
+}
+.form label{
+    margin-bottom: 1%;
+}
+.chonphim, .chonphong{
+    align-items: flex-start;
+}
+.chonphim select, .chonphong select, .ngaychieu input, .giochieu input{
+    width: 100%;
+    color: white;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background-color: #15151a;
+}
+.ngaychieu, .giochieu{
+    width: 49%;
+}
+.chonphim select, .chonphong select, .giochieu input, .ngaychieu input{
+    height: 35px;
+}
+.form label{
+    display: block;
+    align-self: flex-start;
+}
+.modal-button{
+    margin-top: 3%;
+}
+.cancel-button{
+    width: 60px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #15151a;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #7a7880;
+}
+.save-button{
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-color:  #e0743a;
+    font-weight: bold;
+}

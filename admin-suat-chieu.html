@@ -60,7 +60,7 @@
         <div class="content">
             <div class="title">
                 <div>Quản lý <span>Suất chiếu</span></div>
-                <button>Thêm suất chiếu</button>
+                <button onclick="openModal('modalThemSuatChieu')">Thêm suất chiếu</button>
             </div> 
             <table class="bang-hien-thi-suat-chieu">
                 <thead>
@@ -78,7 +78,43 @@
             </table>
         </div>
     </div>
-
+    <!--Modal Thêm phòng chiếu-->
+    <div class="modal" id="modalThemSuatChieu">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Thêm suất chiếu</span>
+                <button onclick="closeModal('modalThemSuatChieu')" class="modal-close">x</button>
+            </div>
+            <div class="form">
+                <div class="chonphim">
+                    <label for="chon-phim">Chọn phim</label>
+                    <select name="" id="chon-phim">
+                        <!--JS-->
+                    </select>
+                </div>
+                <div class="chonphong">
+                    <label for="chon-phong">Chọn phòng</label>
+                    <select name="" id="chon-phong">
+                        <!--JS-->
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 2%;">
+                    <div class="ngaychieu">
+                        <label for="ngay-chieu">Ngày chiếu</label>
+                        <input type="date" id="ngay-chieu">
+                    </div>
+                    <div class="giochieu">
+                        <label for="gio-chieu">Giờ chiếu</label>
+                        <input type="time" id="gio-chieu">
+                    </div>
+                </div>
+                <div class="modal-button">
+                    <button onclick="closeModal('modalThemSuatChieu')" class="cancel-button">Hủy</button>
+                    <button onclick="themSuatChieu()" class="save-button">Thêm phòng</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="data.js"></script>
 </body>
 </html>
