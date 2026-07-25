@@ -7,32 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-<body>
-    <header class="topbar">
-        <div class="logo">CINEMA</div>
-        <div class="right">
-            <div class="tim-kiem">
-                <input type="text" class="search" placeholder="Tìm phim">
-                <i class="fa-solid fa-magnifying-glass kinh-lup"></i>
-            </div>
-            <button class="myinfor">Hồ sơ</button>
-        </div>  
-    </header><hr class="dong-ke">
-    <section class="options">
-        <button id="dangChieu" class="chon">ĐANG CHIẾU</button>
-        <button id="sapChieu">SẮP CHIẾU</button>
-    </section>
-    <section class="listphim">
-        <div class="overview" id="overview"></div>
-    </section>
-    <script src="data.js"></script>
-    <script src="trang-chu.js"></script>
-</body>
-</html>
-<style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
     *{
     box-sizing: border-box;
@@ -207,3 +183,30 @@
         cursor:pointer;
     }
 </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">CINEMA</div>
+        <div class="right">
+            <div class="tim-kiem">
+                <input type="text" class="search" placeholder="Tìm phim">
+                <i class="fa-solid fa-magnifying-glass kinh-lup"></i>
+            </div>
+            <button class="myinfor">Hồ sơ</button>
+        </div>  
+    </header><hr class="dong-ke">
+    <section class="options">
+        <button id="dangChieu" class="chon">ĐANG CHIẾU</button>
+        <button id="sapChieu">SẮP CHIẾU</button>
+    </section>
+    <section class="listphim">
+        <div class="overview" id="overview"></div>
+    </section>
+
+
+    <script src="data.js"></script>
+    <script src="trang-chu.js"></script>
+    <script src="chitiet.js"></script>
+</body>
+</html>
+

@@ -20,7 +20,7 @@ function hienThi(){
             ${phim.tenPhim}
         </a>
     </h3>
-        <p>${phim.theLoai.join(" • ")}</p>
+        
         <p>${phim.thoiLuong}</p>
         <button class="buy">MUA VÉ</button>
         `;
