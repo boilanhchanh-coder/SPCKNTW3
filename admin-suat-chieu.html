@@ -60,15 +60,16 @@
         <div class="content">
             <div class="title">
                 <div>Quản lý <span>Suất chiếu</span></div>
-                <button onclick="openModal('modalThemSuatChieu')">Thêm suất chiếu</button>
+                <button onclick="openModal('modalThemSuatChieu'); dropListPhimPhong()">Thêm suất chiếu</button>
             </div> 
             <table class="bang-hien-thi-suat-chieu">
                 <thead>
                     <tr>
-                        <td>TÊN PHIM</td>
-                        <td>THỂ LOẠI</td>
-                        <td>THỜI LƯỢNG</td>
-                        <td>TRẠNG THÁI</td>
+                        <td>PHIM</td>
+                        <td>PHÒNG</td>
+                        <td>NGÀY GIỜ</td>
+                        <td>GIÁ VÉ</td>
+                        <td>GHẾ TRỐNG</td>
                         <td>THAO TÁC</td>
                     </tr>
                 </thead>
@@ -78,7 +79,7 @@
             </table>
         </div>
     </div>
-    <!--Modal Thêm phòng chiếu-->
+    <!--Modal Thêm suất chiếu-->
     <div class="modal" id="modalThemSuatChieu">
         <div class="modal-content">
             <div class="modal-header">
@@ -116,5 +117,6 @@
         </div>
     </div>
     <script src="data.js"></script>
+    <script src="admin-suat-chieu.js"></script>
 </body>
 </html>

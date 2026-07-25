@@ -231,8 +231,9 @@ function closeModal(id){
     ok.style.display = "none";
 }
 //Hàm tạo ID
-function taoIdMoi(danhSachPhim){
-    let idLonNhat = Math.max(...danhSachPhim.map(p => p.id));
+function taoIdMoi(danhSach){
+    if (danhSach.length === 0) return 1;
+    let idLonNhat = Math.max(...danhSach.map(p => p.id));
     return idLonNhat + 1;
 }
 

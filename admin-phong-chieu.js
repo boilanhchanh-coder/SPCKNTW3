@@ -5,13 +5,6 @@ function soLuongPhong(){
     soPhong.textContent = danhSachPhong.length;
 }
 soLuongPhong();
-//Số lượng ghế từng phòng
-function soLuongGhe(){
-    let soGhe = document.querySelector(".tong-so-luong-ghe");
-    let danhSachPhim = getData("danhSachPhim");
-    soGhe.textContent = danhSachPhim.length;
-}
-soLuongGhe();
 //Tổng số ghế
 function tongSoGhe(){
     let soGhe = document.querySelector(".tong-so-luong-ghe");

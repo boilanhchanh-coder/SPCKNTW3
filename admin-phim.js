@@ -24,7 +24,7 @@ function renderDanhSachPhim(){
                 </select>
             </td>
             <td>
-                <button class="btn-suat-chieu">Suất chiếu</button>
+                <button onclick="location.href='admin-suat-chieu.html'" class="btn-suat-chieu">Suất chiếu</button>
                 <button onclick="xoaPhim(${phim.id})" class="btn-xoa-phim">Xóa</button>
             </td>
         `;

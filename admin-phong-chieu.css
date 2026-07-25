@@ -212,9 +212,7 @@ thead td{
     font-weight: bold;
 }
 /*Modal Sơ đồ ghế*/
-#modalSoDoGhe{
-    display: flex;
-}
+
 .man-hinh{
     width: 95%;
     padding: 6px;
@@ -250,4 +248,19 @@ thead td{
     background:#202028;
     color:white;
     border: 1px solid rgba(255,255,255,0.08);
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #0d0c11;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+    );
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #15151a;
 }
