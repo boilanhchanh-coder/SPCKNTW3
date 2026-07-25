@@ -27,6 +27,9 @@
     background-color: #e0743a;
     font-weight: bold;
 }
+.title button:hover{
+    background-color: #c9622e;
+}
 .bang-hien-thi-suat-chieu{
     width: 96%;
     align-self: center;
