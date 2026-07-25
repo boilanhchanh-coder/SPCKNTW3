@@ -167,11 +167,11 @@ let sapChieu = [
 ];
 let overview = document.getElementById("overview");
 
-function hienThi(dsPhim){
-
+function hienThi(bien){
+    let danhSachPhim = getData("danhSachPhim");
     overview.innerHTML = "";
 
-    for(let phim of dsPhim){
+    for(let phim of danhSachPhim){
 
         let the = document.createElement("div");
 
