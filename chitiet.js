@@ -21,7 +21,7 @@ function hienThiChiTiet(id){
 
                 <p><b>Thể loại:</b> ${phim.theLoai}</p>
 
-                <p><b>Thời lượng:</b> ${phim.thoiLuong}</p>
+                <p><b>Thời lượng:</b> ${phim.thoiLuong + " phút"}</p>
                 <h2>NỘI DUNG PHIM</h2>
 
                  <p>${phim.moTa}</p>

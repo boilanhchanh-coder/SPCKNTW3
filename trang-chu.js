@@ -21,7 +21,7 @@ function hienThi(){
         </a>
     </h3>
         
-        <p>${phim.thoiLuong}</p>
+        <p>${phim.thoiLuong + " phút    "}</p>
         <button class="buy">MUA VÉ</button>
         `;
         overview.appendChild(the);

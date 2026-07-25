@@ -10,13 +10,21 @@
 
     }
     .head{
-        display: flex;
-        justify-content:space-evenly;
-        margin-top: 40px;
+        width:90%;
+
+        margin:40px auto;
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
+
     }
+
     .logo{
         margin-right: 510px;
-        font-family: 'Oswald', sans-serif;
+        font-family:'Oswald',sans-serif;
         font-size: 40px;
         font-weight: bold;
     }
@@ -28,98 +36,143 @@
         color: #e0743a;
     }
     .ttin{
-        margin-right: 110px;
-        font-size: small;
-        color: #666;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:6px;
     }
     .frames{
-        display: flex;
-        justify-content: space-between;
+    width: 90%;
+    margin: 60px auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-start;
     }
    .dong-ke{
     width: 72%;
     height: 0.3px;
     border: none;
-    background: #666;
+    background:#2f2f2f;
     margin: 10px auto;
     }
+   .login,
     .register{
-        width: 60%;
-        height: 400px;
-        margin-top: 50px;
-        margin-right: 250px;
-        margin-left: 70px;
-
+        width:500px;
+        min-height:560px; 
+        background:#151515;
+        border:1px solid rgba(224,116,58,.2);
+        border-radius:22px;
+        padding:40px;
+        box-shadow:0 0 25px rgba(224,116,58,.08);
+        display:flex;
+        flex-direction:column;
     }
-    .soc-doc{
-    width: 1px;
-    background: #444;
-    height: 550px; 
-    margin-top: 50px;
+    .icon-box{
+    width:70px;
+    height:70px;
+    margin:0 auto 25px;
+    border-radius:50%;
+    border:2px solid #e0743a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#e0743a;
+    font-size:28px;
     }
-    .login{
-        width: 40%;
-        height: 400px;
-        margin-top: 50px;
-        margin-left: 300px;
+    .login h2,
+    .register h2{
+    text-align:center;
+    color:white;
+    font-size:36px;
+    margin-bottom:35px;
+    letter-spacing:1px;
     }
     input{
-        color:#666;
-        background-color: black;
-        border: 1px solid #666;
-        border-radius: 3px;
-        margin-bottom: 18px;
-        width: 80%;
-        height: 8%;
-        padding-left: 10px;
+    width:100%;
+    height:52px;
+
+    margin-bottom:22px;
+
+    padding:0 18px;
+
+    background:#0f0f0f;
+
+    border:1px solid #333;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.25s;
+    }
+    input:focus{
+
+    outline:none;
+
+    border:1px solid #e0743a;
+
+    box-shadow:0 0 8px rgba(224,116,58,.25);
+
     }
     
     label{
-        display: block;
-        margin-bottom: 5px;
+    display:block;
+    margin-bottom:8px;
+    color:#d8d8d8;
+    font-size:15px;
     }
-    .mk{
-        display: flex;
 
+    .mk{
+    display:flex;
+    gap:15px;
     }
+
     .cot{
-        width: 80%;
+        flex:1;
     }
+
     .cot input{
-        width: 60%;
-        height: 32px;;
-    }  
-    .mk input{
-        width: 60%;
+        width:100%;
     }
+
     .button-login,
     .button-register{
-        width: 80%;
-        padding: 7px;
-        background-color: transparent;
-        border: 1px solid #e0743a;
-        border-radius: 2px;
-        cursor: pointer;
-        font-size: 16px;
-        color: #e0743a;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10px;
-        transition: .2s;
+
+        width:100%;
+
+        height:55px;
+
+        border:none;
+
+        border-radius:10px;
+
+        background:#e0743a;
+
+        color:white;
+
+        font-size:18px;
+
+        font-weight:600;
+
+        cursor:pointer;
+
+        transition:.25s;
     }
     .button-login:hover,
     .button-register:hover{
-        background:#e0743a;
-         color:#0a0a09; 
+         background:#ff8b4b;
     }
     .button-login svg, .button-register svg { width:16px; height:16px; transition:transform .2s; }
     .button-login:hover svg, .button-register:hover svg { transform:translateX(4px); }
     .forget{
-        margin-left: 250px;
-        font-size: 12px;
-        margin-top: 10px;
-        color: #666;
+        margin-top:18px;
+        text-align:right;
+        color:#888;
+        cursor:pointer;
+        font-size:14px;
         text-decoration: underline;
-        cursor: pointer;
-    }
+
+}
