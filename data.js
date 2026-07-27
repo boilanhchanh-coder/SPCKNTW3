@@ -22,28 +22,45 @@ function tkAdminCoSan(){
 tkAdminCoSan();
 //Đăng kí
 function register(){
+    let success = document.getElementById("registerSuccess");
     let regUser = document.getElementById('regUser').value;
     let regPass = document.getElementById('regPass').value;
     let confirm = document.getElementById('xac-nhan').value;
     let accounts = getData('accounts');
     if (!accounts.some(a => a.username === regUser) && regPass === confirm){
-        accounts.push({
-            username: regUser,
-            password: regPass,
-            role: "User"
-        });
-        saveData("accounts", accounts);
+    accounts.push({
+        username: regUser,
+        password: regPass,
+        role: "User"
+    });
+
+    saveData("accounts", accounts);
+
+    success.innerHTML = "✓ Đăng ký thành công!";
+    success.style.display = "block";
     }
 }
 //Đăng nhập
 function login(){
     let loginUser = document.getElementById("loginUser").value;
     let loginPass = document.getElementById("loginPass").value;
+    let error = document.getElementById("loginError");
     let accounts = getData("accounts");
     let acc = accounts.find(a => a.username === loginUser && a.password === loginPass);
     saveData("NguoiDung", loginUser);
-    if (acc.role === "Admin") location.href = "admin-phim.html";
-    else location.href = "trang-chu.html"
+     if (acc) {
+        error.style.display = "none";
+
+        saveData("NguoiDung", loginUser);
+
+        if (acc.role === "Admin")
+            location.href = "admin-phim.html";
+        else
+            location.href = "trang-chu.html";
+    } else {
+        error.innerHTML = "Sai tài khoản hoặc mật khẩu.";
+        error.style.display = "block";
+    }
 }
 //Đăng xuất
 function logout(){
