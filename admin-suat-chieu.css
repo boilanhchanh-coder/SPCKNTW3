@@ -241,3 +241,28 @@ thead td{
     border-bottom-right-radius: 20px;
     background-color: #15151a;
 }
+.trangthai-suat{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: .2px;
+}
+.Đangchiếu{
+    background: rgba(76,175,125,0.15);
+    color: #4ADE80;
+    border: none;
+}
+.Sắpchiếu{
+    color: orange;
+    background:rgba(208,155,41,0.15);
+    border: none;
+}
+.Đãchiếu{
+    color: red;
+    background:rgba(224,85,85,0.15);
+    border: none;
+}
