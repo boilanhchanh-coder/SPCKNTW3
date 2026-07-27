@@ -264,9 +264,27 @@ function taoIdMoi(danhSach){
     let idLonNhat = Math.max(...danhSach.map(p => p.id));
     return idLonNhat + 1;
 }
-
-
-
+//Sơ đồ ghế
+function taoSoDoGhe(id){
+    let danhSachPhong = getData("danhSachPhong");
+    let hienThiTen = document.getElementById("htTenPhong");
+    let hienThiSoDo = document.getElementById("so-do-ghe");
+    let phong = danhSachPhong.find(p => p.id == id);
+    hienThiTen.innerHTML = phong.tenPhong;
+    hienThiSoDo.innerHTML = "";
+    for(let i = 0; i < phong.soHang; i++){
+        let maHang = String.fromCharCode(65 + i);
+        let divHang = document.createElement("div");
+        divHang.className = "hang-ghe";
+        for(let j = 1; j <= phong.soGheMoiHang; j++){
+            let ghe = document.createElement("button");
+            ghe.textContent = maHang + j;
+            ghe.className = "ghe";
+            divHang.appendChild(ghe);
+        }
+        hienThiSoDo.appendChild(divHang);
+    }
+}   
 
 
 

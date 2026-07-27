@@ -85,7 +85,7 @@ thead td{
     background-color: #3b3b4f;
     border-color: rgba(255, 255, 255, 0.3);
 }
-/*Modal thêm phòng chiếu*/
+/*Modal thêm suất chiếu*/
 .modal{
     width: 100%;
     height: 100%;
@@ -162,9 +162,11 @@ thead td{
     align-self: flex-start;
 }
 .modal-button{
+    display: flex;
     margin-top: 3%;
 }
 .cancel-button{
+    margin-right: 3%;
     width: 60px;
     height: 35px;
     border-radius: 5px;
@@ -173,10 +175,69 @@ thead td{
     color: #7a7880;
 }
 .save-button{
+    margin-left: 3%;
     width: 100px;
     height: 35px;
     border-radius: 5px;
     border: none;
     background-color:  #e0743a;
     font-weight: bold;
+}
+/*Modal Sơ đồ ghế*/
+
+.man-hinh{
+    width: 95%;
+    padding: 6px;
+    font-weight: 400;
+    font-size: small;
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #15151a;
+}
+.sodoghe{
+    border: 1px solid rgba(255,255,255,0.08);
+    width: 95%;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #15151a;
+    border-radius: 10px;
+}
+.hang-ghe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ghe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+    width:30px;
+    height:30px;
+    border-radius:5px;
+    font-size: 9px;
+    background:#2c2c37;
+    color:white;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.ghe:hover{
+    background: #3b3b4f;
+    border-color: rgba(224,116,58,0.5);
+    transform: scale(1.08);
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #0d0c11;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+    );
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #15151a;
 }
