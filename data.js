@@ -96,7 +96,15 @@ function phimCoSan(){
                 moTa: "Siêu phẩm zombie đến từ đạo diễn YEON Sang-ho, người từng tạo nên thành công vang dội của Train to Busan. Khi một dịch bệnh bí ẩn bùng phát tại một tòa cao ốc giữa trung tâm Seoul, những người sống sót bị mắc kẹt và buộc phải chiến đấu để tìm đường thoát thân. Đáng sợ hơn, những người nhiễm bệnh không còn là những xác sống vô thức mà đã tiến hóa thành những sinh vật săn mồi theo bầy đàn có tổ chức. Hy vọng cuối cùng của họ phụ thuộc vào một người đàn ông tự nhận đang mang trong mình loại vắc-xin có thể chấm dứt đại dịch.",
                 trangThai: "Đang chiếu",
                 anh: "colony.jpg",
-                id: 1
+                lichChieu: [
+                    "9:00",
+                    "11:10",
+                    "13:30",
+                    "17:00",
+                    "20:30",
+                    "22:50"
+                ],
+                id: 1,
             },
             {
                 tenPhim: "Doraemon: Nobita và lâu đài dưới đáy biển",
@@ -105,6 +113,14 @@ function phimCoSan(){
                 moTa: "Trong kỳ nghỉ hè, Doraemon cùng Nobita và những người bạn quyết định tổ chức chuyến cắm trại dưới đáy đại dương bằng các bảo bối thần kỳ. Trên hành trình khám phá thế giới biển sâu, cả nhóm gặp El – cư dân của Liên bang Mu bí ẩn. Khi \"Lâu đài Quỷ\" có nguy cơ hồi sinh, Nobita và các bạn phải cùng nhau bước vào cuộc phiêu lưu đầy thử thách để bảo vệ đại dương cũng như tương lai của Trái Đất.",
                 trangThai: "Đang chiếu",
                 anh: "doraemon.jpg",
+                lichChieu: [
+                    "7:30",
+                    "9:20",
+                    "12:30",
+                    "15:00",
+                    "20:30",
+                    "22:10"
+                ],
                 id: 2
             },
             {
@@ -114,6 +130,13 @@ function phimCoSan(){
                 moTa: "Suốt mười năm lang thang, chú chó hoang mang tên Gohan đã trải qua nhiều cuộc gặp gỡ và chia ly cùng những người chủ khác nhau. Mỗi chặng đường đều để lại trong Gohan những ký ức không thể phai mờ về tình yêu thương, lòng trung thành và sự gắn kết giữa con người với động vật. Bộ phim mang đến câu chuyện cảm động về thời gian, gia đình và giá trị của những cuộc hội ngộ.",
                 trangThai: "Đang chiếu",
                 anh: "gohan.jpg",
+                lichChieu: [
+                    "08:00",
+                    "11:20",
+                    "15:30",
+                    "18:00",
+                    "21:30"
+                ],
                 id: 3
             },
             {
@@ -123,6 +146,14 @@ function phimCoSan(){
                 moTa: "Mitsuha, một nữ sinh sống tại vùng quê, và Taki, một nam sinh ở Tokyo, bất ngờ hoán đổi cơ thể với nhau qua những giấc mơ kỳ lạ. Khi dần quen với cuộc sống của đối phương, cả hai hình thành một mối liên kết đặc biệt. Tuy nhiên, một bí mật liên quan đến thời gian và thảm họa thiên nhiên đã khiến họ phải vượt qua mọi khoảng cách để tìm thấy nhau và thay đổi số phận.",
                 trangThai: "Đang chiếu",
                 anh: "yourname.jpg",
+                lichChieu: [
+                    "8:00",
+                    "11:20",
+                    "12:50",
+                    "15:10",
+                    "21:30",
+                    "23:10"
+                ],
                 id: 4
             },
             {
@@ -132,6 +163,14 @@ function phimCoSan(){
                 moTa: "Sau bao ngày chờ đợi, Đại Chiến Shibuya cuối cùng cũng xuất hiện trên màn ảnh rộng, tái hiện những khoảnh khắc căng thẳng và bi tráng nhất của bộ truyện. Không chỉ khắc họa toàn bộ biến cố tại Shibuya, bộ phim còn mở ra chương truyện mới mang tên \"Tử Diệt Hồi Du\" - trò chơi sinh tử đầy khốc liệt, nơi số phận của các chú thuật sư trẻ tuổi sẽ tiếp tục bị thử thách.",
                 trangThai: "Đang chiếu",
                 anh: "hoaingoc.jpg",
+                lichChieu: [
+                    "7:30",
+                    "9:20",
+                    "12:30",
+                    "15:00",
+                    "20:30",
+                    "22:10"
+                ],
                 id: 5
             },
             {
@@ -141,6 +180,14 @@ function phimCoSan(){
                 moTa:"Mỗi lần gieo xúc xắc là mỗi lần quỷ xuất hiện. Trong lúc dọn dẹp một ngôi đền bỏ hoang, một nhóm trẻ vô tình tìm thấy bàn cờ cổ bị phong ấn từ lâu. Sau khi gieo viên xúc xắc bí ẩn và đọc lên những câu đồng dao kỳ lạ, chúng nhận ra mình đã bắt đầu một trò chơi chết chóc. Mỗi lượt chơi đều kéo theo sự xuất hiện của những linh hồn đáng sợ, buộc cả nhóm phải tìm cách phá giải lời nguyền trước khi trời sáng." ,
                 trangThai: "Đang chiếu",
                 anh: "ddmq.jpg",
+                lichChieu: [
+                    "7:40",
+                    "9:15",
+                    "11:30",
+                    "14:15",
+                    "17:30",
+                    "19:10"
+                ],
                 id: 6
             },
             {
@@ -150,6 +197,14 @@ function phimCoSan(){
                 moTa: "Phim điện ảnh Backrooms (2026) (do hãng A24 sản xuất) theo chân Clark (Chiwetel Ejiofor), một chủ cửa hàng nội thất, vô tình phát hiện cánh cửa bí ẩn dưới tầng hầm. Bước qua đó, anh bị cuốn vào một chiều không gian vô tận với những căn phòng màu vàng méo mó, liên tục lặp lại. Khi Clark ngày càng lún sâu và ám ảnh, nhà trị liệu tâm lý của anh là Mary (Renate Reinsve) quyết định bước vào không gian đó để tìm và giải cứu anh.",
                 trangThai: "Đang chiếu",
                 anh: "ttqn.jpg",
+                lichChieu: [
+                    "09:00",
+                    "10:20",
+                    "13:30",
+                    "17:00",
+                    "20:30"
+
+                ],
                 id: 7
             },
             {
@@ -159,6 +214,13 @@ function phimCoSan(){
                 moTa: "Được sản xuất nhân dịp kỷ niệm 10 năm ra mắt của Lớp Học Ám Sát, bộ phim mang đến những câu chuyện hoàn toàn mới về thầy Koro và tập thể lớp 3-E. Khi một sinh vật sở hữu tốc độ Mach 20 trở thành giáo viên của lớp học bị xem là phế thải, các học sinh không chỉ thực hiện nhiệm vụ ám sát thầy mà còn dần trưởng thành qua những bài học quý giá về tình bạn, lòng dũng cảm và ý chí vượt qua giới hạn bản thân",
                 trangThai: "Đang chiếu",
                 anh: "lhas.jpg",
+                lichChieu: [
+                    "08:00",
+                    "11:20",
+                    "15:30",
+                    "18:00",
+                    "21:30"
+                ],
                 id: 8
             },
             {
@@ -168,6 +230,14 @@ function phimCoSan(){
                 moTa:"Trong Moana, phiên bản live-action tái hiện lại cuộc phiêu lưu hoạt hình được yêu mến và từng được đề cử Oscar® của Disney, Moana (Catherine Lagaʻaia) đáp lại tiếng gọi của đại dương và lần đầu tiên rời xa rạn san hô bao quanh hòn đảo Motunui để lên đường cùng á thần huyền thoại Maui (Dwayne Johnson) trong một hành trình phi thường nhằm khôi phục sự thịnh vượng cho dân tộc mình. Bộ phim được đạo diễn bởi Thomas Kail, người từng giành giải Emmy® và Tony Award® (Hamilton); sản xuất bởi Dwayne Johnson, Dany Garcia, Beau Flynn, Hiram Garcia và Lin-Manuel Miranda; đồng thời được điều hành sản xuất bởi Kail, Scott Sheldon, Charles Newirth và Auliʻi Cravalho – người từng lồng tiếng cho Moana trong hai phần phim hoạt hình Moana và Moana 2. Moana quy tụ các ca khúc gốc do Lin-Manuel Miranda, Opetaia Foaʻi và Mark Mancina sáng tác, cùng phần nhạc nền nguyên bản do Mark Mancina đảm nhiệm. Khán giả sẽ được đắm mình trong những khung hình mãn nhãn, âm thanh sống động và các giai điệu cuốn hút của Moana, độc quyền tại các rạp chiếu phim từ ngày 10 tháng 7 năm 2026" ,
                 trangThai: "Đang chiếu",
                 anh: "moana.jpg",
+                lichChieu: [
+                    "7:10",
+                    "9:20",
+                    "11:50",
+                    "14:20",
+                    "17:30",
+                    "19:10"
+                ],
                 id: 9
             },
             {
@@ -177,6 +247,14 @@ function phimCoSan(){
                 moTa:"Lấy bối cảnh Hollywood vào những năm 1920, bộ phim kể câu chuyện hài hước về hành trình các Minions chinh phục kinh đô điện ảnh để trở thành những ngôi sao màn bạc. Trong quá trình thực hiện bộ phim quái vật của riêng mình, họ vô tình giải phóng những sinh vật kỳ bí, khiến cả thế giới rơi vào hỗn loạn. Với sự đoàn kết và những màn báo hại đặc trưng, các Minions phải tìm cách khắc phục chính những rắc rối do mình gây ra và cứu lấy hành tinh. ",
                 trangThai: "Đang chiếu",
                 anh: "minion.jpg",
+                lichChieu: [
+                    "8:00",
+                    "11:20",
+                    "12:50",
+                    "15:10",
+                    "21:30",
+                    "23:10"
+                ],
                 id: 10
             },
             {
@@ -186,6 +264,13 @@ function phimCoSan(){
                 mota:"Bear, một chàng trai cô độc và sống khép kín, đem lòng yêu Nikki nhưng không đủ dũng cảm để bày tỏ tình cảm. Trong tuyệt vọng, anh tìm đến một nghi thức huyền bí mang tên One Wish Willow với hy vọng chinh phục trái tim cô gái mình yêu. Điều ước nhanh chóng trở thành hiện thực, nhưng tình yêu thuần khiết dần biến thành sự ám ảnh và chiếm hữu đầy đáng sợ. Khi ranh giới giữa yêu thương và điên loạn bị xóa nhòa, Bear bị cuốn vào chuỗi bi kịch kinh hoàng do chính mình tạo ra. Bộ phim khai thác mặt tối của tình yêu, sự ám ảnh và những hậu quả khủng khiếp khi con người cố gắng thay đổi cảm xúc của người khác bằng những thế lực siêu nhiên. ", 
                 trangThai: "Đang chiếu",
                 anh: "amanh.jpg",
+                lichChieu: [
+                    "9:00",
+                    "13:30",
+                    "17:00",
+                    "20:30",
+                    "21:20"
+                ],
                 id: 11
             },
             {
@@ -195,6 +280,14 @@ function phimCoSan(){
                 mota: "Bị bỏ rơi tại Hàn Quốc từ khi còn nhỏ, Huy Hoàng quyết định mang tro cốt của người mẹ nuôi quá cố trở về Việt Nam để tìm lại cội nguồn. Trên hành trình ấy, anh tình cờ gặp Diễm My – một ca sĩ trẻ đang chật vật mưu sinh. Cả hai cùng nhau vượt qua những khó khăn và hiểm nguy do quá khứ mang lại, đồng thời dần chữa lành những tổn thương trong lòng. Bộ phim là câu chuyện cảm động về gia đình, tình yêu, sự tha thứ và hành trình tìm lại bản thân.",
                 trangThai: "Đang chiếu",
                 anh: "movn.jpg",
+                lichChieu: [
+                    "7:30",
+                    "9:20",
+                    "12:30",
+                    "15:00",
+                    "20:30",
+                    "22:10"
+                ],
                 id: 12
             }
             
