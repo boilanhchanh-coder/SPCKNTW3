@@ -31,7 +31,7 @@ function renderDanhSachPhong(){
             <td>${phong.soHang*phong.soGheMoiHang}</td>
             <td>${phong.loaiVe}</td>
             <td>
-                <button onclick="openModal('modalSoDoGhe'); taoSoDoGhe(${phong.id})" class="btn-so-do">Sơ đồ</button>
+                <button onclick="openModal('modalSoDoGhe'); taoSoDoGhe(${phong.id})" class="btn-so-do">Sơ đồ ghế</button>
                 <button onclick="xoaPhong(${phong.id})" class="btn-xoa-phong">Xóa</button>
             </td>
         `;
@@ -75,24 +75,3 @@ function xoaPhong(id){
     soLuongPhong();
     tongSoGhe();
 }
-//Sơ đồ ghế
-function taoSoDoGhe(id){
-    let danhSachPhong = getData("danhSachPhong");
-    let hienThiTen = document.getElementById("htTenPhong");
-    let hienThiSoDo = document.getElementById("so-do-ghe");
-    let phong = danhSachPhong.find(p => p.id == id);
-    hienThiTen.innerHTML = phong.tenPhong;
-    hienThiSoDo.innerHTML = "";
-    for(let i = 0; i < phong.soHang; i++){
-        let maHang = String.fromCharCode(65 + i);
-        let divHang = document.createElement("div");
-        divHang.className = "hang-ghe";
-        for(let j = 1; j <= phong.soGheMoiHang; j++){
-            let ghe = document.createElement("button");
-            ghe.textContent = maHang + j;
-            ghe.className = "ghe";
-            divHang.appendChild(ghe);
-        }
-        hienThiSoDo.appendChild(divHang);
-    }
-}   

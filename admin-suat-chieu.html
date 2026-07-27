@@ -70,6 +70,7 @@
                         <td>NGÀY GIỜ</td>
                         <td>GIÁ VÉ</td>
                         <td>GHẾ TRỐNG</td>
+                        <td>TRẠNG THÁI</td>
                         <td>THAO TÁC</td>
                     </tr>
                 </thead>
@@ -112,6 +113,24 @@
                 <div class="modal-button">
                     <button onclick="closeModal('modalThemSuatChieu')" class="cancel-button">Hủy</button>
                     <button onclick="themSuatChieu()" class="save-button">Thêm suất chiếu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Sơ đồ ghế-->
+    <div class="modal" id="modalSoDo">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Sơ đồ ghế - Phòng <span id="htTenPhong"></span></span>
+                <button onclick="closeModal('modalSoDo')" class="modal-close">x</button>
+            </div>
+            <div class="form">
+                <div class="man-hinh">==MÀN HÌNH==</div>
+                <div class="sodoghe" id="so-do-ghe">
+                    <!--JS-->
+                </div>
+                <div class="modal-button">
+                    <button onclick="closeModal('modalSoDo')" class="cancel-button">Đóng</button>
                 </div>
             </div>
         </div>
