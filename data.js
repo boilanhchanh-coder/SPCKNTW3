@@ -39,7 +39,18 @@ function register(){
     success.innerHTML = "✓ Đăng ký thành công!";
     success.style.display = "block";
     }
+    else if(accounts.some(a => a.username === regUser)){
+        success.innerHTML = "Tài khoản đã tồn tại!";
+        success.style.color = "#ff4d4d";
+        success.style.display = "block";
+    }
+    else{
+        success.innerHTML = "Mật khẩu xác nhận không khớp!";
+        success.style.color = "#ff4d4d";
+        success.style.display = "block";
+    }
 }
+
 //Đăng nhập
 function login(){
     let loginUser = document.getElementById("loginUser").value;
