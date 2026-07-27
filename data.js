@@ -37,6 +37,7 @@ function register(){
     saveData("accounts", accounts);
 
     success.innerHTML = "✓ Đăng ký thành công!";
+    success.style.color = "#47d764"; 
     success.style.display = "block";
     }
     else if(accounts.some(a => a.username === regUser)){
