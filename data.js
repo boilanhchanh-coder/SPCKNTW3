@@ -14,7 +14,6 @@ function tkAdminCoSan(){
             username: "admin",
             password: "1",
             role: "Admin",
-            created: new Date().toLocaleString()
         });
         saveData("accounts", accounts)
     }
