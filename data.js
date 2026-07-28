@@ -61,9 +61,7 @@ function login(){
     saveData("NguoiDung", loginUser);
      if (acc) {
         error.style.display = "none";
-
         saveData("NguoiDung", loginUser);
-
         if (acc.role === "Admin")
             location.href = "admin-phim.html";
         else
@@ -77,8 +75,6 @@ function login(){
 function logout(){
     location.href = "index.html";
 }
-
-
 //Danh sách Thể loại
 let danhSachTheLoai = ["Hoạt hình", "Phiêu lưu", "Hành động",
                        "Khoa học viễn tưởng", "Gia đình", "Chính kịch",

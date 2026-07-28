@@ -1,0 +1,387 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    background:#0a0a09;
+    color:white;
+}
+
+/* ================= HEADER ================= */
+
+.topbar{
+    width:100%;
+    height:80px;
+    background:#111;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 70px;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.search-box{
+    position:relative;
+}
+
+.search-box input{
+    width:260px;
+    height:42px;
+    border:none;
+    border-radius:10px;
+    background:#1b1b1b;
+    color:white;
+    padding:0 45px 0 15px;
+    outline:none;
+}
+
+.search-box i{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#999;
+}
+
+.logout{
+    width:120px;
+    height:42px;
+    border:none;
+    border-radius:10px;
+    background:#e0743a;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.logout:hover{
+    background:#ff9359;
+}
+
+hr{
+    border:none;
+    height:1px;
+    background:#2d2d2d;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:90%;
+    margin:35px auto 70px;
+}
+
+.back{
+    color:#ccc;
+    text-decoration:none;
+    font-size:15px;
+}
+
+.back:hover{
+    color:#e0743a;
+}
+
+.title{
+    margin:25px 0 35px;
+    font-size:32px;
+    text-align:center;
+    color:#fff;
+}
+
+/* ================= MOVIE ================= */
+
+.movie-card{
+    display:flex;
+    gap:35px;
+    background:#1b1b1b;
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:35px;
+}
+
+.poster img{
+    width:260px;
+    border-radius:15px;
+}
+
+.movie-info{
+    flex:1;
+}
+
+.movie-info h2{
+    font-size:32px;
+    margin-bottom:18px;
+}
+
+.tags{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.tags span{
+    padding:8px 15px;
+    background:#292929;
+    border-radius:20px;
+    font-size:14px;
+}
+
+.movie-info p{
+    color:#bdbdbd;
+    margin-bottom:15px;
+    line-height:1.8;
+}
+
+.description{
+    margin-top:25px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#1b1b1b;
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:30px;
+}
+
+.card h2{
+    margin-bottom:20px;
+}
+
+/* ================= DAYS ================= */
+
+.days{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.days button{
+    width:95px;
+    height:80px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#252525;
+
+    color:white;
+
+    cursor:pointer;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    transition:.3s;
+}
+
+.days button span{
+    font-size:13px;
+    color:#ddd;
+}
+
+.days button strong{
+    margin-top:6px;
+    font-size:18px;
+}
+
+.days button:hover,
+.days .active{
+    background:#e0743a;
+}
+
+/* ================= TIMES ================= */
+
+.times{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.times button{
+
+    width:110px;
+
+    height:50px;
+
+    border:2px solid #444;
+
+    background:#222;
+
+    color:white;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.times button:hover{
+
+    border-color:#e0743a;
+
+    background:#e0743a;
+}
+
+/* ================= TICKET ================= */
+
+.ticket{
+
+    background:#1b1b1b;
+
+    border-radius:18px;
+
+    padding:35px;
+}
+
+.ticket h2{
+
+    margin-bottom:25px;
+}
+
+.row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #333;
+}
+
+.row span:first-child{
+
+    color:#aaa;
+}
+
+.total{
+
+    margin-top:15px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:#e0743a;
+}
+
+.next{
+
+    width:100%;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#e0743a;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-top:35px;
+
+    transition:.3s;
+}
+
+.next:hover{
+
+    background:#ff9359;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+    .movie-card{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    .poster img{
+
+        width:220px;
+    }
+
+    .movie-info{
+
+        text-align:center;
+    }
+
+    .tags{
+
+        justify-content:center;
+    }
+
+    .topbar{
+
+        padding:20px;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .topbar{
+
+        flex-direction:column;
+
+        height:auto;
+
+        gap:20px;
+
+        padding:20px;
+    }
+
+    .right{
+
+        flex-direction:column;
+    }
+
+    .search-box input{
+
+        width:100%;
+    }
+
+    .days{
+
+        justify-content:center;
+    }
+
+    .times{
+
+        justify-content:center;
+    }
+
+}

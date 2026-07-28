@@ -25,13 +25,13 @@ function hienThiChiTiet(id){
                 <h2>NỘI DUNG PHIM</h2>
 
                  <p>${phim.moTa}</p>
-                 <button class="buy">MUA VÉ</button>
+                 <button onclick="location.href='dat-ve.html?id=${phim.id}'" class="buy">MUA VÉ</button>
             </div>
             
         </div>
        
         `;
-} else {
-    box.innerHTML = "<h2>Không tìm thấy phim!</h2>";
-}
+    } else {
+        box.innerHTML = "<h2>Không tìm thấy phim!</h2>";
+    }
 }
