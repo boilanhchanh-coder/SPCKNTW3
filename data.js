@@ -95,14 +95,6 @@ function phimCoSan(){
                 moTa: "Siêu phẩm zombie đến từ đạo diễn YEON Sang-ho, người từng tạo nên thành công vang dội của Train to Busan. Khi một dịch bệnh bí ẩn bùng phát tại một tòa cao ốc giữa trung tâm Seoul, những người sống sót bị mắc kẹt và buộc phải chiến đấu để tìm đường thoát thân. Đáng sợ hơn, những người nhiễm bệnh không còn là những xác sống vô thức mà đã tiến hóa thành những sinh vật săn mồi theo bầy đàn có tổ chức. Hy vọng cuối cùng của họ phụ thuộc vào một người đàn ông tự nhận đang mang trong mình loại vắc-xin có thể chấm dứt đại dịch.",
                 trangThai: "Đang chiếu",
                 anh: "colony.jpg",
-                lichChieu: [
-                    "9:00",
-                    "11:10",
-                    "13:30",
-                    "17:00",
-                    "20:30",
-                    "22:50"
-                ],
                 id: 1,
             },
             {
