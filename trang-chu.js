@@ -10,7 +10,9 @@ function hienThi(){
         let the = document.createElement("div");
 
         the.className = "thephim";
-
+        the.onclick = function () {
+            location.href = `chiTiet.html?id=${phim.id}`;
+        };
         the.innerHTML = `
         <div class="poster">
             <img src="${phim.anh}">
@@ -22,7 +24,7 @@ function hienThi(){
     </h3>
         
         <p>${phim.thoiLuong + " phút    "}</p>
-        <button class="buy" onclick="moMuaVe(${phim.id})">
+        <button class="buy">
             MUA VÉ
         </button>
         `;
