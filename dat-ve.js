@@ -2,12 +2,12 @@ let id = new URLSearchParams(location.search).get("id");
 let ngayDangChon = null;
 let suatDangChon = null;
 let gheDangChon = [];
+//Hiển thị ngày chiếu
 function hienThiNgay(){
     let danhSachSuatChieu = getData("danhSachSuatChieu");
     let suatCuaPhim = danhSachSuatChieu.filter(s => s.phimID == id && s.trangThai !== "Đã chiếu");
     let box = document.getElementById("danh-sach-ngay");
     box.innerHTML = "";
-
     if (suatCuaPhim.length === 0){
         box.innerHTML = "<p>Hiện chưa có suất chiếu nào.</p>";
         return;
@@ -27,6 +27,35 @@ function hienThiNgay(){
     box.querySelector(".ngay").click();
 }
 hienThiNgay();
+function hienThiGio(ngay, suatCuaPhim){
+    let danhSachPhong = getData("danhSachPhong");
+    let suatTrongNgay = suatCuaPhim.filter(s => s.ngay === ngay);
+
+    let box = document.getElementById("danh-sach-gio");
+    box.innerHTML = "";
+
+    suatTrongNgay.forEach(s => {
+        let phong = danhSachPhong.find(p => p.id == s.phongID);
+        let btn = document.createElement("button");
+        btn.className = "btn-gio";
+        btn.textContent = s.gio;
+        btn.onclick = function(){
+            document.querySelectorAll(".btn-gio").forEach(b => b.classList.remove("dang-chon"));
+            btn.classList.add("dang-chon");
+            chonSuatChieu(s.id);
+        };
+        box.appendChild(btn);
+    });
+}
+function chonSuatChieu(suatId){
+    let danhSachSuatChieu = getData("danhSachSuatChieu");
+    let danhSachPhong = getData("danhSachPhong");
+
+    suatDangChon = danhSachSuatChieu.find(s => s.id == suatId);
+    let phong = danhSachPhong.find(p => p.id == suatDangChon.phongID);
+    gheDangChon = [];
+    taoSoDoGheDatVe(phong.id);
+}
 function taoSoDoGheDatVe(id){
     let danhSachPhong = getData("danhSachPhong");
     let hienThiSoDo = document.getElementById("so-do-ghe");
@@ -48,9 +77,7 @@ function taoSoDoGheDatVe(id){
             }
             else{
                 ghe.onclick = function(){
-
                     ghe.classList.toggle("dang-chon");
-
                     if(ghe.classList.contains("dang-chon")){
                         gheDangChon.push(maGhe);
                     }
@@ -64,35 +91,6 @@ function taoSoDoGheDatVe(id){
         hienThiSoDo.appendChild(divHang);
     }
 }
-function hienThiGio(ngay, suatCuaPhim){
-    let danhSachPhong = getData("danhSachPhong");
-    let suatTrongNgay = suatCuaPhim.filter(s => s.ngay === ngay);
-
-    let box = document.getElementById("danh-sach-gio");
-    box.innerHTML = "";
-
-    suatTrongNgay.forEach(s => {
-        let phong = danhSachPhong.find(p => p.id == s.phongID);
-        let btn = document.createElement("button");
-        btn.className = "btn-gio";
-        btn.textContent = s.gio;
-        btn.onclick = function(){
-            document.querySelectorAll(".btn-gio").forEach(b => b.classList.remove("dang-chon"));
-            btn.classList.add("dang-chon");
-            chonSuatChieu(s.id);   // hàm bạn đã có sẵn để hiện sơ đồ ghế
-        };
-        box.appendChild(btn);
-    });
-}
-function chonSuatChieu(suatId){
-    let danhSachSuatChieu = getData("danhSachSuatChieu");
-    let danhSachPhong = getData("danhSachPhong");
-
-    suatDangChon = danhSachSuatChieu.find(s => s.id == suatId);
-    let phong = danhSachPhong.find(p => p.id == suatDangChon.phongID);
-    gheDangChon = [];
-    taoSoDoGheDatVe(phong.id);
-}
 function datVe(){
     if(gheDangChon.length == 0){
         alert("Vui lòng chọn ghế");
@@ -104,8 +102,8 @@ function datVe(){
     saveData("danhSachSuatChieu", danhSachSuatChieu);
     alert("Đặt vé thành công");
     gheDangChon = [];
-    taoSoDoGheDatVe(suatChieu.phongID);
     suatDangChon = suatChieu;
+    taoSoDoGheDatVe(suatChieu.phongID);
 }
 function capNhatThongTin(){
     let danhSachPhong = getData("danhSachPhong")
