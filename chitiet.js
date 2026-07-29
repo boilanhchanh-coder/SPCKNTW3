@@ -14,22 +14,15 @@ function hienThiChiTiet(id){
             <div class="poster">
                 <img src="${phim.anh}">
             </div>
-
             <div class="info">
-
                 <h1>${phim.tenPhim}</h1>
-
                 <p><b>Thể loại:</b> ${phim.theLoai}</p>
-
                 <p><b>Thời lượng:</b> ${phim.thoiLuong + " phút"}</p>
                 <h2>NỘI DUNG PHIM</h2>
-
                  <p>${phim.moTa}</p>
                  <button onclick="location.href='dat-ve.html?id=${phim.id}'" class="buy">MUA VÉ</button>
             </div>
-            
         </div>
-       
         `;
     } else {
         box.innerHTML = "<h2>Không tìm thấy phim!</h2>";
