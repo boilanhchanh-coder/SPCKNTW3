@@ -171,7 +171,7 @@ body{
 }
 
 .noi-dung{
-    margin-top:60px;
+    margin-top: 60px;
 }
 
 .noi-dung h2{
@@ -182,7 +182,26 @@ body{
     line-height:1.8;
     color:#ccc;
 }
-
+.btn-quay-lai{
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5%;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #ccc;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .2s;
+}
+.btn-quay-lai:hover{
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.25);
+    color: white;
+}
 </style>
 </head>
 <body>
@@ -200,7 +219,9 @@ body{
     </header>
 
     <hr class="dong-ke">
-
+    <button class="btn-quay-lai" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i> Quay lại
+    </button>
     <div id="chiTiet"></div>
 
     <script src="data.js"></script>

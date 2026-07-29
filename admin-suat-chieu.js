@@ -94,10 +94,6 @@ function themSuatChieu(){
     document.getElementById("gio-chieu").value = "";
     closeModal('modalThemSuatChieu');
 }
-function dinhDangNgay(ngayISO){
-    let date = new Date(ngayISO);
-    return date.toLocaleDateString("vi-VN");
-}
 //Số lượng ghế từng phòng
 function soLuongGhe(phong){
     return phong.soHang*phong.soGheMoiHang;    

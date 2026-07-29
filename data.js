@@ -280,7 +280,11 @@ function taoSoDoGhe(id){
         }
         hienThiSoDo.appendChild(divHang);
     }
-}   
+}
+function dinhDangNgay(ngayISO){
+    let date = new Date(ngayISO);
+    return date.toLocaleDateString("vi-VN");
+}
 
 
 

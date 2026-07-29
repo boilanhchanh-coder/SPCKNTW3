@@ -22,13 +22,37 @@
         </div>  
     </header><hr class="dong-ke">
     <section class="container">
-        <div class="chon-ngay">
-            <h2>Suất chiếu</h2>
-            <div id="hien-thi-ngay"></div>
+        <button class="btn-quay-lai" onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i> Quay lại
+        </button>
+        <div class="khu-chon">
+            <h3>Chọn ngày</h3>
+            <div class="danh-sach-ngay" id="danh-sach-ngay"></div>
+
+            <h3>Chọn giờ</h3>
+            <div class="danh-sach-gio" id="danh-sach-gio"></div>
+        </div>
+        <div class="khu-ghe" id="khu-ghe">
+            <h3>Chọn ghế</h3>
+            <div class="man-hinh">MÀN HÌNH</div>
+            <div class="sodoghe" id="so-do-ghe"></div>
+
+            <div class="chu-thich">
+                <span><i class="hop ghe-mau"></i> Ghế trống</span>
+                <span><i class="hop ghe-chon-mau"></i> Đang chọn</span>
+                <span><i class="hop ghe-dat-mau"></i> Đã đặt</span>
+            </div>
+
+            <div class="tom-tat">
+                <div>
+                    <p>Ghế đã chọn: <span id="ds-ghe-chon">Chưa chọn</span></p>
+                    <p>Tổng tiền: <span id="tong-tien">0 đ</span></p>
+                </div>
+                <button class="btn-xac-nhan" onclick="datVe()">Xác nhận đặt vé</button>
+            </div>
         </div>
     </section>
     <script src="data.js"></script>
-    <script src="chitiet.js"></script>
     <script src="dat-ve.js"></script>
 </body>
 </html>
