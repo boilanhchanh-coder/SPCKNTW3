@@ -1,9 +1,14 @@
 
 let overview = document.getElementById("overview");
-function hienThi(trangThai){
+function hienThi(trangThai,  tuKhoa = ""){
     let danhSachPhim = getData("danhSachPhim");
 
     danhSachPhim = danhSachPhim.filter(p => p.trangThai == trangThai);
+    if (tuKhoa != "") {
+    danhSachPhim = danhSachPhim.filter(p =>
+        p.tenPhim.toLowerCase().includes(tuKhoa.toLowerCase())
+    );
+}
 
     overview.innerHTML = "";
 
@@ -51,3 +56,13 @@ document.getElementById("sapChieu").onclick = function(){
     document.getElementById("sapChieu").classList.add("chon");
     document.getElementById("dangChieu").classList.remove("chon");
 }
+//Tìm phim
+let oTim = document.querySelector(".search");
+
+oTim.oninput = function () {
+    let trangThai = document.getElementById("dangChieu").classList.contains("chon")
+        ? "Đang chiếu"
+        : "Sắp chiếu";
+
+    hienThi(trangThai, this.value);
+};
