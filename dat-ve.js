@@ -21,6 +21,10 @@ function hienThiNgay(){
             document.querySelectorAll(".ngay").forEach(b => b.classList.remove("dang-chon"));
             btn.classList.add("dang-chon");
             hienThiGio(ngay, suatCuaPhim);
+            suatDangChon = null;
+            gheDangChon = [];
+            document.getElementById("so-do-ghe").innerHTML = "";
+            capNhatThongTin();
         };
         box.appendChild(btn);
     });
@@ -55,6 +59,7 @@ function chonSuatChieu(suatId){
     let phong = danhSachPhong.find(p => p.id == suatDangChon.phongID);
     gheDangChon = [];
     taoSoDoGheDatVe(phong.id);
+    capNhatThongTin();
 }
 function taoSoDoGheDatVe(id){
     let danhSachPhong = getData("danhSachPhong");
@@ -106,10 +111,15 @@ function datVe(){
     taoSoDoGheDatVe(suatChieu.phongID);
 }
 function capNhatThongTin(){
-    let danhSachPhong = getData("danhSachPhong")
-    let phong = danhSachPhong.find(p => p.id == suatDangChon.phongID);
     let hienThiGhe = document.getElementById("ds-ghe-chon");
     let tongTien = document.getElementById("tong-tien");
+    if (!suatDangChon || gheDangChon.length == 0) {
+        hienThiGhe.textContent = "Chưa chọn";
+        tongTien.textContent = "0 đ";
+        return;
+    }
+    let danhSachPhong = getData("danhSachPhong")
+    let phong = danhSachPhong.find(p => p.id == suatDangChon.phongID);
     if (gheDangChon.length == 0) {
         hienThiGhe.textContent = "Chưa chọn";
         tongTien.textContent = "0 đ";
