@@ -149,13 +149,3 @@
     .button-login:hover, .button-register:hover{
          background:#ff8b4b;
     }
-    .button-login svg, .button-register svg { width:16px; height:16px; transition:transform .2s; }
-    .button-login:hover svg, .button-register:hover svg { transform:translateX(4px); }
-    .forget{
-        margin-top:18px;
-        text-align:right;
-        color:#888;
-        cursor:pointer;
-        font-size:14px;
-        text-decoration: underline;
-    }
