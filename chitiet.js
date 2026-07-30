@@ -27,4 +27,4 @@ function hienThiChiTiet(id){
     } else {
         box.innerHTML = "<h2>Không tìm thấy phim!</h2>";
     }
-}
+}a

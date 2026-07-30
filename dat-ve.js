@@ -103,6 +103,22 @@ function datVe(){
     }
     let danhSachSuatChieu = getData("danhSachSuatChieu");
     let suatChieu = danhSachSuatChieu.find(s => s.id == suatDangChon.id);
+    let danhSachPhong = getData("danhSachPhong");
+    let phong = danhSachPhong.find(p => p.id == suatChieu.phongID);
+    let donGia = phong.giaVe;
+    let tongTien = donGia*gheDangChon.length;
+    let danhSachVe = getData("danhSachVe");
+    let veMoi = {
+        id: taoIdMoi(danhSachVe),
+        suatChieuID: suatChieu.id,
+        danhSachGhe: [...gheDangChon],
+        soLuongVe: gheDangChon.length,
+        donGia: donGia,
+        tongTien: tongTien,
+        thoiGianDat: new Date().toISOString()
+    };
+    danhSachVe.push(veMoi);
+    saveData("danhSachVe", danhSachVe);
     suatChieu.gheDaDat.push(...gheDangChon);
     saveData("danhSachSuatChieu", danhSachSuatChieu);
     alert("Đặt vé thành công");
