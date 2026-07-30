@@ -191,7 +191,44 @@ function phimCoSan(){
                 trangThai: "Đang chiếu",
                 anh: "movn.jpg",
                 id: 12
-            }
+            },
+            {
+                id:13,
+                tenPhim: "Shin, Cậu bé bút chì: Kỳ nghỉ yêu quái của tớ",
+                theLoai: ["Hoạt hình, Phiêu lưu, Giả tưởng"],
+                thoiLuong: 97,
+                trangThai: "Sắp chiếu",
+                anh: "shin.jpg",
+                mota:"Lấy bối cảnh mùa hè tại Akita, bộ phim theo chân Shin và gia đình Nohara trong chuyến về quê đầy háo hức. Tuy nhiên, một sự kiện kỳ lạ đã đưa cả gia đình lạc vào Xứ sở Yêu quái bí ẩn – nơi con người không được phép đặt chân tới. Tại đây, Shin và những người thân phải đối mặt với hàng loạt thử thách bất ngờ, đồng thời gặp gỡ nhiều yêu quái độc đáo, hài hước và đáng yêu. Bộ phim mang đến một hành trình phiêu lưu hấp dẫn với những thông điệp ý nghĩa về tình cảm gia đình và tình bạn." ,
+            },
+
+            {
+                id:14,
+                tenPhim: "Người nhện: Khởi đầu mới",
+                theLoai: ["Hành động, Phiêu lưu, Siêu anh hùng"],
+                thoiLuong: 120,
+                trangThai: "Sắp chiếu",
+                anh: "spiderman.jpg",
+                mota: "Sau những biến cố trước đó, Peter Parker buộc phải một mình đối mặt với những thử thách mới khi không còn sự hỗ trợ từ Tony Stark hay những người thân thiết. Một kẻ thù bí ẩn cùng hàng loạt vụ án mới xuất hiện, đồng thời những biến đổi kỳ lạ trong cơ thể khiến Người Nhện phải đối diện với cuộc chiến lớn nhất từ trước đến nay để bảo vệ thành phố và chính bản thân mình.",
+            },
+            {
+                id:15,
+                tenPhim: "Thám tử lừng danh Conan: Thiên thần sa ngã trên xa lộ ",
+                theLoai: ["Hoạt hình, Hành động, Bí ẩn"],
+                thoiLuong: 123,
+                trangThai: "Sắp chiếu",
+                anh: "conan.jpg",
+                mota: "Conan cùng Ran, Sonoko và Đội Thám tử Nhí đến Yokohama để tham dự Lễ hội Moto Kanagawa. Tuy nhiên, sự kiện nhanh chóng trở nên hỗn loạn khi một tay lái bí ẩn mang biệt danh Quái Xế Đen xuất hiện với những màn truy đuổi nghẹt thở. Cuộc điều tra đưa Conan đến một vụ án kéo dài nhiều năm, nơi những bí mật trong quá khứ dần được hé lộ và kéo theo hàng loạt tình tiết bất ngờ.",
+            },
+            {
+                id:16,
+                tenPhim: "Mùi cỏ cháy",
+                theLoai: ["Lịch sử"],
+                thoiLuong: 97,
+                trangThai: "Sắp chiếu",
+                anh: "mcc.jpg",
+                mota:"Phim được lấy cảm hứng từ Nhật ký Mãi mãi tuổi hai mươi của liệt sĩ Nguyễn Văn Thạc và những ký ức chiến trường về Thành cổ Quảng Trị, bộ phim là bản hùng ca xúc động về một thế hệ thanh niên Việt Nam đã sống, chiến đấu và cống hiến trọn vẹn tuổi xuân cho độc lập, tự do của Tổ quốc" ,
+            },
             
         ];
         saveData("danhSachPhim", phimBanDau);
