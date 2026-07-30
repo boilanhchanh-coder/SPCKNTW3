@@ -122,7 +122,7 @@ function renderDanhSachSuatChieu(){
             <td>${phong ? phong.tenPhong : "<span style='color:red;'>(Đã xóa)</span>"}</td>
             <td>${dinhDangNgay(s.ngay)} - ${s.gio}</td>
             <td>${phong ? phong.giaVe.toLocaleString("vi-VN") + " đ" : "-"}</td>
-            <td>${phong ? soLuongGhe(phong) : "-"}</td>
+            <td>${phong ? (soLuongGhe(phong) - (s.gheDaDat || []).length) + "/" + soLuongGhe(phong) : "-"}</td>
             <td><span class="trangthai-suat ${s.trangThai.replaceAll(" ", "")}">${s.trangThai}</span></td>
             <td>
                 ${phong ? `<button onclick="openModal('modalSoDo'); taoSoDoGhe('${phong.id}')" class="btn-so-do">Sơ đồ</button>` : ""}
