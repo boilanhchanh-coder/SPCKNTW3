@@ -62,78 +62,36 @@
                 <div>Thống kê <span>Doanh thu</span></div>
             </div>
             <div class="so-lieu">
-                <div class="doanh-thu">
-                    <div>Doanh thu</div>
-                    <span class="so-luong-phong">0</span>
+                <div class="tong-doanh-thu">
+                    <div>Tổng doanh thu</div>
+                    <span class="doanhthu">0</span>
                 </div>
                 <div class="ve-da-ban">
                     <div>Vé đã bán</div>
-                    <span class="tong-so-luong-ghe">0</span>
+                    <span class="veDaBan">0</span>
                 </div>
                 <div class="ty-le">
                     <div>Tỷ lệ lấp đầy TB</div>
-                    <span class="tong-so-luong-ghe">0</span>
+                    <span class="tyLeTB">0</span>
                 </div>
                 <div class="suat-chieu">
                     <div>Suất chiếu</div>
-                    <span class="tong-so-luong-ghe">0</span>
+                    <span class="suatChieu">0</span>
                 </div>
             </div>
-            <table class="bang-hien-thi-phim">
-                <thead>
-                    <tr>
-                        <td>TÊN PHIM</td>
-                        <td>THỂ LOẠI</td>
-                        <td>THỜI LƯỢNG</td>
-                        <td>TRẠNG THÁI</td>
-                        <td>THAO TÁC</td>
-                    </tr>
-                </thead>
-                <tbody class="hien-thi-phim">
-                    <!--Viết JS-->
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <!--Modal Thêm phim-->
-    <div class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span>Thêm phim mới</span>
-                <button onclick="closeModal()" class="modal-close">x</button>
-            </div>
-            <div class="form">
-                <div class="tenphim">
-                    <label for="ten-phim">Tên phim</label>
-                    <input type="text" id="ten-phim">
+            <div class="so-lieu">
+                <div class="top-phim">
+                    <div>TOP PHIM - SỐ LƯỢNG NGƯỜI XEM</div>
+                    <div id="topphim" class="top-phim-doanh-thu"></div>
                 </div>
-                <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 2%;">
-                    <div class="theloai">
-                        <label for="the-loai">Thể loại</label>
-                        <input type="text" id="the-loai">
-                    </div>
-                    <div class="thoiluong">
-                        <label for="thoi-luong">Thời lượng</label>
-                        <input type="text" id="thoi-luong">
-                    </div>
-                </div>
-                <div class="mota">
-                    <label for="">Mô tả</label>
-                    <input type="text" id="mo-ta">
-                </div>
-                <div class="trangthai">
-                    <label for="">Trạng thái</label>
-                    <input type="text" id="trang-thai">
-                </div>
-                <div class="modal-button">
-                    <button onclick="closeModal()" class="cancel-button">Hủy</button>
-                    <button class="save-button">Lưu phim</button>
+                <div class="ty-le-lap-day">
+                    <div>TỶ LỆ LẤP ĐẦY GHẾ</div>
+                    <div id="tyle" class="top-phim-doanh-thu"></div>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="data.js"></script>
-    <script src="admin-phim.js"></script>
+    <script src="admin-thong-ke.js"></script>
 </body>
 </html>

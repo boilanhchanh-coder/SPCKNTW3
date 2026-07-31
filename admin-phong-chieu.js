@@ -67,6 +67,12 @@ function themPhong(){
 }
 //Xóa phòng
 function xoaPhong(id){
+    let danhSachSuatChieu = getData("danhSachSuatChieu");
+    let dangCoSuatChieu = danhSachSuatChieu.some(s => s.phongID == id);
+    if (dangCoSuatChieu){
+        alert("Không thể xóa phòng đang có suất chiếu");
+        return;
+    }
     let danhSachPhong = getData("danhSachPhong");
     let viTri = danhSachPhong.findIndex(p => p.id == id);
     danhSachPhong.splice(viTri, 1);

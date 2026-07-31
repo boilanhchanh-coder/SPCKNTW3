@@ -282,6 +282,14 @@ function suatChieuCoSan(){
     }
 }
 suatChieuCoSan();
+//Danh sách vé
+function veCoSan(){
+    let ve = getData("danhSachVe");
+    if (ve.length === 0){
+        saveData("danhSachSuatVe", []);
+    }
+}
+veCoSan();
 //Đóng mở modal Thêm phim
 function openModal(id){
     let ok = document.getElementById(id);

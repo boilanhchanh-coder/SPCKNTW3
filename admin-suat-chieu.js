@@ -71,6 +71,12 @@ function themSuatChieu(){
         alert("Vui lòng chọn đầy đủ phim, phòng, ngày và giờ chiếu.");
         return;
     }
+    let now = new Date();
+    let batDau = new Date(ngay + "T" + gio);
+    if (now >= batDau){
+        alert("Không thể thêm suất chiếu có thời gian đã qua.");
+        return;
+    }
     let danhSachPhim = getData("danhSachPhim");
     let phim = danhSachPhim.find(p => p.id == phimID);
     let thoiLuong = phim ? phim.thoiLuong : 150;

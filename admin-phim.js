@@ -105,6 +105,12 @@ function themPhim(){
 }
 //Xóa phim
 function xoaPhim(id){
+    let danhSachSuatChieu = getData("danhSachSuatChieu");
+    let dangCoSuatChieu = danhSachSuatChieu.some(s => s.phimID == id);
+    if (dangCoSuatChieu){
+        alert("Không thể xóa phim đang có suất chiếu");
+        return;
+    }
     let danhSachPhim = getData("danhSachPhim");
     let viTri = danhSachPhim.findIndex(p => p.id == id);
     danhSachPhim.splice(viTri, 1);
