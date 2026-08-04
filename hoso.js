@@ -24,7 +24,7 @@ for (let ve of danhSachVe) {
     html += `
         <tr>
             <td>${phim.tenPhim}</td>
-            <td>${suat.ngay}</td>
+            <td>${dinhDangNgay(suat.ngay)}</td>
             <td>${suat.gio}</td>
             <td>Phòng ${phong.tenPhong}</td>
             <td>${ve.danhSachGhe.join(", ")}</td>

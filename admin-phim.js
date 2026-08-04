@@ -101,7 +101,7 @@ function themPhim(){
     document.querySelectorAll("#theloai-list input:checked").forEach(cb => {
         cb.checked = false;
     });
-    closeModal();
+    closeModal('modalThemPhim');
 }
 //Xóa phim
 function xoaPhim(id){

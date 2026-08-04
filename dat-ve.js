@@ -167,7 +167,7 @@ function moPopupVe(){
     let tongTien = phong.giaVe * gheDangChon.length;
 
     document.getElementById("popupTenPhim").textContent = phim.tenPhim;
-    document.getElementById("popupNgay").textContent = suatDangChon.ngay;
+    document.getElementById("popupNgay").textContent = dinhDangNgay(suatDangChon.ngay);
     document.getElementById("popupGio").textContent = suatDangChon.gio;
     document.getElementById("popupSuat").textContent =  "Phòng " + phong.tenPhong;    
     document.getElementById("popupGhe").textContent = gheDangChon.join(", ");
