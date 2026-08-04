@@ -40,18 +40,15 @@ function register(){
     let regPass = document.getElementById('regPass').value;
     let confirm = document.getElementById('xac-nhan').value;
     let accounts = getData('accounts');
-    if (!accounts.some(a => a.username === regUser) && regPass === confirm){
-    accounts.push({
-        username: regUser,
-        password: regPass,
-        role: "User"
-    });
-
-    saveData("accounts", accounts);
-
-    success.innerHTML = "✓ Đăng ký thành công!";
-    success.style.color = "#47d764"; 
-    success.style.display = "block";
+    if(!regUser || !regPass || !confirm){
+        success.innerHTML = "Hãy nhập đầy đủ thông tin!";
+        success.style.color = "#ff4d4d";
+        success.style.display = "block";
+    }
+    else if(regPass != confirm){
+        success.innerHTML = "Mật khẩu xác nhận không khớp!";
+        success.style.color = "#ff4d4d";
+        success.style.display = "block";
     }
     else if(accounts.some(a => a.username === regUser)){
         success.innerHTML = "Tài khoản đã tồn tại!";
@@ -59,12 +56,30 @@ function register(){
         success.style.display = "block";
     }
     else{
-        success.innerHTML = "Mật khẩu xác nhận không khớp!";
-        success.style.color = "#ff4d4d";
+        accounts.push({
+        username: regUser,
+        password: regPass,
+        role: "User"
+        });
+        saveData("accounts", accounts);
+        success.innerHTML = "✓ Đăng ký thành công!";
+        success.style.color = "#47d764"; 
         success.style.display = "block";
     }
 }
-
+//Chặn đăng nhập
+function chanDangNhap(){
+    let trang = location.pathname.split("/").pop();
+    if (trang === "index.html") {
+        return;
+    } else {
+        let nguoiDung = getData("NguoiDung");
+        if (nguoiDung.length === 0){
+            location.href = "index.html";
+        }
+    }
+}
+chanDangNhap();
 //Đăng nhập
 function login(){
     let loginUser = document.getElementById("loginUser").value;
@@ -85,12 +100,13 @@ function login(){
         error.style.display = "block";
     }
 }
-function moHoSo(){
-    location.href = "hoso.html";
-}
 //Đăng xuất
 function logout(){
     location.href = "index.html";
+    localStorage.removeItem("NguoiDung");
+}
+function moHoSo(){
+    location.href = "hoso.html";
 }
 //Danh sách Thể loại
 let danhSachTheLoai = ["Hoạt hình", "Phiêu lưu", "Hành động",
@@ -114,19 +130,19 @@ function phimCoSan(){
                 tenPhim: "Doraemon: Nobita và lâu đài dưới đáy biển",
                 theLoai: ["Hoạt hình", "Phiêu lưu"],
                 thoiLuong: 101,
-                moTa: "Trong kỳ nghỉ hè, Doraemon cùng Nobita và những người bạn quyết định tổ chức chuyến cắm trại dưới đáy đại dương bằng các bảo bối thần kỳ. Trên hành trình khám phá thế giới biển sâu, cả nhóm gặp El – cư dân của Liên bang Mu bí ẩn. Khi \"Lâu đài Quỷ\" có nguy cơ hồi sinh, Nobita và các bạn phải cùng nhau bước vào cuộc phiêu lưu đầy thử thách để bảo vệ đại dương cũng như tương lai của Trái Đất.",
+                moTa: "Trong kỳ nghỉ hè, Doraemon cùng Nobita và những người bạn quyết định tổ chức chuyến cắm trại dưới đáy đại dương bằng các bảo bối thần kỳ. Trên hành trình khám phá thế giới biển sâu, cả nhóm gặp El - cư dân của Liên bang Mu bí ẩn. Khi \"Lâu đài Quỷ\" có nguy cơ hồi sinh, Nobita và các bạn phải cùng nhau bước vào cuộc phiêu lưu đầy thử thách để bảo vệ đại dương cũng như tương lai của Trái Đất.",
                 trangThai: "Đang chiếu",
                 anh: "doraemon.jpg",
                 id: 2
             },
             {
-                id:14,
                 tenPhim: "Người nhện: Khởi đầu mới",
                 theLoai: ["Hành động, Phiêu lưu, Siêu anh hùng"],
                 thoiLuong: 120,
                 trangThai: "Đang chiếu",
                 anh: "spiderman.jpg",
-                mota: "Sau những biến cố trước đó, Peter Parker buộc phải một mình đối mặt với những thử thách mới khi không còn sự hỗ trợ từ Tony Stark hay những người thân thiết. Một kẻ thù bí ẩn cùng hàng loạt vụ án mới xuất hiện, đồng thời những biến đổi kỳ lạ trong cơ thể khiến Người Nhện phải đối diện với cuộc chiến lớn nhất từ trước đến nay để bảo vệ thành phố và chính bản thân mình.",
+                moTa: "Sau những biến cố trước đó, Peter Parker buộc phải một mình đối mặt với những thử thách mới khi không còn sự hỗ trợ từ Tony Stark hay những người thân thiết. Một kẻ thù bí ẩn cùng hàng loạt vụ án mới xuất hiện, đồng thời những biến đổi kỳ lạ trong cơ thể khiến Người Nhện phải đối diện với cuộc chiến lớn nhất từ trước đến nay để bảo vệ thành phố và chính bản thân mình.",
+                id: 14
             },
             {
                 tenPhim: "Your Name",
@@ -195,55 +211,55 @@ function phimCoSan(){
                 tenPhim: "ÁM ẢNH (OBSESSION)",
                 theLoai: ["Kinh dị • Tâm lý • Lãng mạn"],
                 thoiLuong: 108,
-                mota:"Bear, một chàng trai cô độc và sống khép kín, đem lòng yêu Nikki nhưng không đủ dũng cảm để bày tỏ tình cảm. Trong tuyệt vọng, anh tìm đến một nghi thức huyền bí mang tên One Wish Willow với hy vọng chinh phục trái tim cô gái mình yêu. Điều ước nhanh chóng trở thành hiện thực, nhưng tình yêu thuần khiết dần biến thành sự ám ảnh và chiếm hữu đầy đáng sợ. Khi ranh giới giữa yêu thương và điên loạn bị xóa nhòa, Bear bị cuốn vào chuỗi bi kịch kinh hoàng do chính mình tạo ra. Bộ phim khai thác mặt tối của tình yêu, sự ám ảnh và những hậu quả khủng khiếp khi con người cố gắng thay đổi cảm xúc của người khác bằng những thế lực siêu nhiên. ", 
+                moTa:"Bear, một chàng trai cô độc và sống khép kín, đem lòng yêu Nikki nhưng không đủ dũng cảm để bày tỏ tình cảm. Trong tuyệt vọng, anh tìm đến một nghi thức huyền bí mang tên One Wish Willow với hy vọng chinh phục trái tim cô gái mình yêu. Điều ước nhanh chóng trở thành hiện thực, nhưng tình yêu thuần khiết dần biến thành sự ám ảnh và chiếm hữu đầy đáng sợ. Khi ranh giới giữa yêu thương và điên loạn bị xóa nhòa, Bear bị cuốn vào chuỗi bi kịch kinh hoàng do chính mình tạo ra. Bộ phim khai thác mặt tối của tình yêu, sự ám ảnh và những hậu quả khủng khiếp khi con người cố gắng thay đổi cảm xúc của người khác bằng những thế lực siêu nhiên. ", 
                 trangThai: "Đang chiếu",
                 anh: "amanh.jpg",
                 id: 11
             },
-            {
+            {   
+                id: 12,
                 tenPhim: "Mẹ ơi về nhà",
                 theLoai: ["Tâm lý • Tình cảm"],
                 thoiLuong: 140,
-                mota: "Bị bỏ rơi tại Hàn Quốc từ khi còn nhỏ, Huy Hoàng quyết định mang tro cốt của người mẹ nuôi quá cố trở về Việt Nam để tìm lại cội nguồn. Trên hành trình ấy, anh tình cờ gặp Diễm My – một ca sĩ trẻ đang chật vật mưu sinh. Cả hai cùng nhau vượt qua những khó khăn và hiểm nguy do quá khứ mang lại, đồng thời dần chữa lành những tổn thương trong lòng. Bộ phim là câu chuyện cảm động về gia đình, tình yêu, sự tha thứ và hành trình tìm lại bản thân.",
+                moTa: "Bị bỏ rơi tại Hàn Quốc từ khi còn nhỏ, Huy Hoàng quyết định mang tro cốt của người mẹ nuôi quá cố trở về Việt Nam để tìm lại cội nguồn. Trên hành trình ấy, anh tình cờ gặp Diễm My – một ca sĩ trẻ đang chật vật mưu sinh. Cả hai cùng nhau vượt qua những khó khăn và hiểm nguy do quá khứ mang lại, đồng thời dần chữa lành những tổn thương trong lòng. Bộ phim là câu chuyện cảm động về gia đình, tình yêu, sự tha thứ và hành trình tìm lại bản thân.",
                 trangThai: "Đang chiếu",
-                anh: "movn.jpg",
-                id: 12
+                anh: "movn.jpg"
             },
             {
-                id:13,
+                id: 13,
                 tenPhim: "Shin, Cậu bé bút chì: Kỳ nghỉ yêu quái của tớ",
                 theLoai: ["Hoạt hình, Phiêu lưu, Giả tưởng"],
                 thoiLuong: 97,
                 trangThai: "Sắp chiếu",
                 anh: "shin.jpg",
-                mota:"Lấy bối cảnh mùa hè tại Akita, bộ phim theo chân Shin và gia đình Nohara trong chuyến về quê đầy háo hức. Tuy nhiên, một sự kiện kỳ lạ đã đưa cả gia đình lạc vào Xứ sở Yêu quái bí ẩn – nơi con người không được phép đặt chân tới. Tại đây, Shin và những người thân phải đối mặt với hàng loạt thử thách bất ngờ, đồng thời gặp gỡ nhiều yêu quái độc đáo, hài hước và đáng yêu. Bộ phim mang đến một hành trình phiêu lưu hấp dẫn với những thông điệp ý nghĩa về tình cảm gia đình và tình bạn." ,
+                moTa:"Lấy bối cảnh mùa hè tại Akita, bộ phim theo chân Shin và gia đình Nohara trong chuyến về quê đầy háo hức. Tuy nhiên, một sự kiện kỳ lạ đã đưa cả gia đình lạc vào Xứ sở Yêu quái bí ẩn – nơi con người không được phép đặt chân tới. Tại đây, Shin và những người thân phải đối mặt với hàng loạt thử thách bất ngờ, đồng thời gặp gỡ nhiều yêu quái độc đáo, hài hước và đáng yêu. Bộ phim mang đến một hành trình phiêu lưu hấp dẫn với những thông điệp ý nghĩa về tình cảm gia đình và tình bạn." ,
             },
             {
-                id:15,
+                id: 15,
                 tenPhim: "Thám tử lừng danh Conan: Thiên thần sa ngã trên xa lộ ",
                 theLoai: ["Hoạt hình, Hành động, Bí ẩn"],
                 thoiLuong: 123,
                 trangThai: "Sắp chiếu",
                 anh: "conan.jpg",
-                mota: "Conan cùng Ran, Sonoko và Đội Thám tử Nhí đến Yokohama để tham dự Lễ hội Moto Kanagawa. Tuy nhiên, sự kiện nhanh chóng trở nên hỗn loạn khi một tay lái bí ẩn mang biệt danh Quái Xế Đen xuất hiện với những màn truy đuổi nghẹt thở. Cuộc điều tra đưa Conan đến một vụ án kéo dài nhiều năm, nơi những bí mật trong quá khứ dần được hé lộ và kéo theo hàng loạt tình tiết bất ngờ.",
+                moTa: "Conan cùng Ran, Sonoko và Đội Thám tử Nhí đến Yokohama để tham dự Lễ hội Moto Kanagawa. Tuy nhiên, sự kiện nhanh chóng trở nên hỗn loạn khi một tay lái bí ẩn mang biệt danh Quái Xế Đen xuất hiện với những màn truy đuổi nghẹt thở. Cuộc điều tra đưa Conan đến một vụ án kéo dài nhiều năm, nơi những bí mật trong quá khứ dần được hé lộ và kéo theo hàng loạt tình tiết bất ngờ.",
             },
             {
-                id:16,
+                id: 16,
                 tenPhim: "Mùi cỏ cháy",
                 theLoai: ["Lịch sử"],
                 thoiLuong: 97,
                 trangThai: "Sắp chiếu",
                 anh: "mcc.jpg",
-                mota:"Phim được lấy cảm hứng từ Nhật ký Mãi mãi tuổi hai mươi của liệt sĩ Nguyễn Văn Thạc và những ký ức chiến trường về Thành cổ Quảng Trị, bộ phim là bản hùng ca xúc động về một thế hệ thanh niên Việt Nam đã sống, chiến đấu và cống hiến trọn vẹn tuổi xuân cho độc lập, tự do của Tổ quốc" ,
+                moTa:"Phim được lấy cảm hứng từ Nhật ký Mãi mãi tuổi hai mươi của liệt sĩ Nguyễn Văn Thạc và những ký ức chiến trường về Thành cổ Quảng Trị, bộ phim là bản hùng ca xúc động về một thế hệ thanh niên Việt Nam đã sống, chiến đấu và cống hiến trọn vẹn tuổi xuân cho độc lập, tự do của Tổ quốc" ,
             },
-            {
+            {   
+                id: 3,
                 tenPhim: "Tạm Biệt Gohan",
                 theLoai: ["Gia đình", "Chính kịch", "Lãng mạn", "Phiêu lưu"],
                 thoiLuong: 140,
                 moTa: "Suốt mười năm lang thang, chú chó hoang mang tên Gohan đã trải qua nhiều cuộc gặp gỡ và chia ly cùng những người chủ khác nhau. Mỗi chặng đường đều để lại trong Gohan những ký ức không thể phai mờ về tình yêu thương, lòng trung thành và sự gắn kết giữa con người với động vật. Bộ phim mang đến câu chuyện cảm động về thời gian, gia đình và giá trị của những cuộc hội ngộ.",
                 trangThai: "Sắp chiếu",
-                anh: "gohan.jpg",
-                id: 3
+                anh: "gohan.jpg"
             },
         ];
         saveData("danhSachPhim", phimBanDau);
