@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
     *{
     box-sizing: border-box;
     font-family: "Poppins",sans-serif;
@@ -31,12 +27,15 @@
         padding:0 70px;
     }
     .logo{
-        display: flex;
-        margin-left: 50px;
-        font-family: 'Oswald', sans-serif;
-        font-size: 30px;
+        margin-right: 510px;
+        font-size: 40px;
         font-weight: bold;
+    }
+    .cine{
         color: white;
+    }
+    .ma{
+        color: #e0743a;
     }
     .right{
         display:flex;
@@ -302,7 +301,9 @@
 </head>
 <body>
     <header class="topbar">
-        <div class="logo">CINEMA</div>
+        <div class="logo">
+            <span class="cine">CINE</span><span class="ma">MA</span>
+        </div>
         <div class="right">
             <div class="tim-kiem">
                 <input type="text" class="search" placeholder="Tìm phim">

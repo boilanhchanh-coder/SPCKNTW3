@@ -20,12 +20,15 @@ body{
     padding:0 70px;
 }
 .logo{
-    display: flex;
-    margin-left: 50px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 30px;
+    margin-right: 510px;
+    font-size: 40px;
     font-weight: bold;
+    }
+.cine{
     color: white;
+}
+.ma{
+    color: #e0743a;
 }
 .right{
     display:flex;
