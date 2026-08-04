@@ -3,16 +3,58 @@
     justify-content: center;
     flex-direction: column;
 }
-.tong-phim{
-    margin: 30px;
+.so-lieu{
+    display: flex;
+}
+.tong-doanh-thu, .ve-da-ban, .ty-le, .suat-chieu{
     background-color: #15151a;
-    width: 96%;
-    min-width: 300px;
+    width: 25%;
+    min-width: 150px;
     height: 120px;
     border-radius: 20px;
     align-self: center;
     border: 1px solid rgba(255,255,255,0.08);
     padding: 15px 0px 0px 25px;
+}
+.tong-doanh-thu{
+    margin: 30px 1% 0px 2%;
+}
+.ve-da-ban, .ty-le{
+    margin: 30px 1% 0px 1%;
+}
+.ty-le{
+    margin: 30px 1% 0px 1%;
+}
+.suat-chieu{
+    margin: 30px 2% 0px 1%;
+}
+.top-phim, .ty-le-lap-day{
+    margin: 30px 1% 30px 1%;
+    background-color: #15151a;
+    width: 47%;
+    min-width: 300px;
+    border-radius: 20px;
+    align-self: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 15px 20px 20px;
+}
+.top-phim{
+    margin-left: 2%;
+}
+.ty-le-lap-day{
+    margin-right: 2%;
+}
+.top-phim > div:first-child, .ty-le-lap-day > div:first-child{
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: white;
+}
+.tong-doanh-thu div, .ve-da-ban div{
+    margin-bottom: 5px;
+}
+.doanhthu, .veDaBan, .tyLeTB, .suatChieu{
+    color: #e0743a;
+    font-size: 45px;
 }
 .title{
     margin-top: 10px;
@@ -30,122 +72,127 @@
 .title span{
     color: #e0743a;
 }
-.title button{
-    width: 150px;
-    height: 50px;
-    border-radius: 15px;
-    border: none;
-    background-color:  #e0743a;
-    font-weight: bold;
+.title button:hover{
+    background-color: #c9622e;
 }
 .bang-hien-thi-phim{
     width: 96%;
     align-self: center;
     background-color: #15151a;
+    border-collapse: separate;
+    border-spacing: 0;
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 20px;
+    overflow: hidden;
     font-size: small;
-}
-thead{
-    align-items: center;
 }
 thead td{
     align-items: center;
-    padding: 2px 0px 2px 15px;
-}
-/*Modal Thêm phim*/
-.modal{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background: rgb(0,0,0,0.8);
-    z-index: 999;
-}
-.modal-content{
-    background-color: #0d0c11;
-    width: 500px;
-    height: 500px;
-    border-radius: 30px;
-}
-.modal-content > div{
-    display: flex;
-    border-radius: 30px;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 70px;
-    padding: 0px 4% 0px 4%;
-}
-.modal-content span{
-    font-size: 20px;
+    padding: 7px 0px 7px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     font-weight: bold;
+    font-size: smaller;
+}
+.hien-thi-phim td{
+    padding: 10px 0px 10px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
     color: white;
 }
-.modal-close{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(255,255,255,0.08);
-    width: 25px;
-    height: 25px;
-    border-radius: 100px;
-    border: 2px solid rgba(255,255,255,0.08);
-    background-color: #0d0c11;
+.ten-phim{
+    font-weight: bold;
 }
-.form{
-    flex-direction: column;
-}
-.tenphim, .mota, .trangthai{
-    width: 100%;
-    margin-bottom: 2%;
-}
-.form label{
-    margin-bottom: 1%;
-}
-.tenphim, .mota, .trangthai{
-    align-items: flex-start;
-}
-.tenphim input, .mota input, .trangthai input, .theloai input, .thoiluong input{
-    width: 100%;
-    color: white;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: 1px solid rgba(255,255,255,0.08);
-    background-color: #15151a;
-}
-.theloai, .thoiluong{
-    width: 49%;
-}
-.theloai input, .thoiluong input, .tenphim input, .trangthai input{
-    height: 35px;
-}
-.mota input{
-    height: 120px;
-}
-.form label{
-    display: block;
-    align-self: flex-start;
-}
-.modal-button{
-    margin-top: 3%;
-}
-.cancel-button{
-    width: 60px;
-    height: 35px;
-    border-radius: 5px;
-    background-color: #15151a;
-    border: 1px solid rgba(255,255,255,0.08);
-    color: #7a7880;
-}
-.save-button{
+select{
     width: 100px;
-    height: 35px;
-    border-radius: 5px;
+    height: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 8px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    letter-spacing: .2px;
+    background: rgba(34, 197, 94, .12);
+}
+.Đangchiếu{
+    background: rgba(76,175,125,0.15);
+    color: #4ADE80;
     border: none;
-    background-color:  #e0743a;
+}
+.Sắpchiếu{
+    color: orange;
+    background:rgba(208,155,41,0.15);
+    border: none;
+}
+.Ngừngchiếu{
+    color: red;
+    background:rgba(224,85,85,0.15);
+    border: none;
+}
+.btn-xoa-phim{
+    width: 40px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: rgba(224,85,85,0.15);
+    border: 1px solid red;
+    color: red;
+    font-weight: bold;
+    font-size: smaller;
+}
+.btn-xoa-phim:hover{
+    background-color: red;
+    color: white;
+}
+.btn-suat-chieu{
+    width: 75px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background-color: #202028;
+    color: white;
+    font-weight: bold;
+    font-size: smaller;
+}
+.btn-suat-chieu:hover{
+    background-color: #3b3b4f;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.top-phim-doanh-thu{
+    background: #15151a;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px;
+}
+.dong-top-phim{
+    margin-bottom: 18px;
+}
+.dong-top-phim:last-child{
+    margin-bottom: 0;
+}
+.ten-va-chi-so{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+.ten-va-chi-so span:first-child{
+    color: #ccc;
+}
+.chi-so{
+    color: #e0743a;
     font-weight: bold;
 }
-
+.thanh-nen{
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255,255,255,0.06);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.thanh-day{
+    height: 100%;
+    background: linear-gradient(90deg, #d4941a, #e0a52c);
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
