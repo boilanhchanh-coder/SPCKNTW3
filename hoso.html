@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hồ sơ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+       
         *{
         box-sizing: border-box;
         font-family: "Poppins",sans-serif;
@@ -27,12 +29,16 @@
             padding:0 70px;
         }
         .logo{
-            display: flex;
-            margin-left: 50px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 30px;
-            font-weight: bold;
+        margin-right: 510px;
+        font-size: 40px;
+        font-weight: bold;
+        
+        }
+        .cine{
             color: white;
+        }
+        .ma{
+            color: #e0743a;
         }
         .right{
             display:flex;
@@ -167,7 +173,9 @@
 </head>
 <body onload="hienThiHoSo()">
     <header class="topbar">
-        <div class="logo">CINEMA</div>
+        <div class="logo">
+            <span class="cine">CINE</span><span class="ma">MA</span>
+        </div>
         <div class="right">
             <button class="myinf">Hồ sơ</button>
             <button class="myinfor" onclick="logout()">Đăng xuất</button>        
