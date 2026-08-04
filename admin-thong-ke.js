@@ -1,7 +1,6 @@
 function tongDoanhThu(){
     let danhSachVe = getData("danhSachVe");
     let hienThi = document.querySelector(".doanhthu");
-
     let tong = 0;
     danhSachVe.forEach(v => {
         tong += v.tongTien;
@@ -111,15 +110,14 @@ function tyLeLapDayTheoSuatChieu(){
         let phanTram = Math.round((gheDaBan/tongGhe)*100);
 
         thongKe.push({
-            tenPhim: phim ? phim.tenPhim : "(Đã xóa)",
-            phanTram: phanTram
+            tenPhim: phim.tenPhim,
+            phanTram: phanTram,
+            tenPhong: phong.tenPhong
         });
     });
-
     thongKe.sort((a, b) => b.phanTram - a.phanTram);
     return thongKe;
 }
-
 function renderTyLeLapDay(){
     let danhSach = tyLeLapDayTheoSuatChieu();
     let top3 = danhSach.slice(0, 3);
@@ -132,7 +130,7 @@ function renderTyLeLapDay(){
         dong.className = "dong-top-phim";
         dong.innerHTML = `
             <div class="ten-va-chi-so">
-                <span>${top.tenPhim}</span>
+                <span>${top.tenPhim + " - Phòng " + top.tenPhong}</span>
                 <span class="chi-so">${top.phanTram}%</span>
             </div>
             <div class="thanh-nen">

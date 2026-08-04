@@ -1,5 +1,3 @@
-
-
 let id = new URLSearchParams(location.search).get("id");
 function hienThiChiTiet(id){
     let danhSachPhim = getData("danhSachPhim");
@@ -8,7 +6,6 @@ function hienThiChiTiet(id){
     if (phim) {
     box.innerHTML = `
         <div class="thong-tin-phim">
-
             <div class="poster">
                 <img src="${phim.anh}">
             </div>
