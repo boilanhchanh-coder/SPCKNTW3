@@ -293,7 +293,7 @@ function suatChieuCoSan(){
     let danhSachPhim = getData("danhSachPhim");
     let danhSachPhong = getData("danhSachPhong");
     if (danhSachPhim.length === 0 || danhSachPhong.length === 0) return;
-    let suatMau = [
+    let suatBanDau = [
         {
             id: 1,
             phimID: danhSachPhim[0].id,
@@ -394,15 +394,81 @@ function suatChieuCoSan(){
             gheDaDat: []
         }
     ];
-    saveData("danhSachSuatChieu", suatMau);
+    saveData("danhSachSuatChieu", suatBanDau);
 }
 suatChieuCoSan();
 //Danh sách vé
 function veCoSan(){
     let ve = getData("danhSachVe");
-    if (ve.length === 0){
-        saveData("danhSachSuatVe", []);
+    if (ve.length > 0) return;
+    let danhSachSuatChieu = getData("danhSachSuatChieu");
+    let danhSachPhong = getData("danhSachPhong");
+    if (danhSachSuatChieu.length === 0) return;
+    function layGiaVe(suatChieuID){
+        let suat = danhSachSuatChieu.find(s => s.id == suatChieuID);
+        let phong = danhSachPhong.find(p => p.id == suat.phongID);
+        return phong ? phong.giaVe : 0;
     }
+    let veBanDau = [
+        {
+            id: 1,
+            suatChieuID: 1,
+            nguoiDung: "user01",
+            danhSachGhe: ["A1", "A2"],
+            soLuongVe: 2,
+            donGia: layGiaVe(1),
+            tongTien: layGiaVe(1)*2,
+            thoiGianDat: "2026-08-03T10:15:00.000Z"
+        },
+        {
+            id: 2,
+            suatChieuID: 1,
+            nguoiDung: "user02",
+            danhSachGhe: ["B4"],
+            soLuongVe: 1,
+            donGia: layGiaVe(1),
+            tongTien: layGiaVe(1),
+            thoiGianDat: "2026-08-03T10:15:00.000Z"
+        },
+        {
+            id: 3,
+            suatChieuID: 2,
+            nguoiDung: "user01",
+            danhSachGhe: ["D5", "D6", "D7"],
+            soLuongVe: 3,
+            donGia: layGiaVe(3),
+            tongTien: layGiaVe(3)*3,
+            thoiGianDat: "2026-08-03T10:15:00.000Z"
+        },
+        {
+            id: 4,
+            suatChieuID: 5,
+            nguoiDung: "user02",
+            danhSachGhe: ["C1"],
+            soLuongVe: 1,
+            donGia: layGiaVe(5),
+            tongTien: layGiaVe(5)*1,
+            thoiGianDat: "2026-08-03T10:15:00.000Z"
+        },
+        {
+            id: 5,
+            suatChieuID: 7,
+            nguoiDung: "user01",
+            danhSachGhe: ["A2", "A3"],
+            soLuongVe: 2,
+            donGia: layGiaVe(7),
+            tongTien: layGiaVe(7)*2,
+            thoiGianDat: "2026-08-03T10:15:00.000Z"
+        }
+    ];
+    saveData("danhSachVe", veBanDau);
+    veBanDau.forEach(v => {
+        let suat = danhSachSuatChieu.find(s => s.id == v.suatChieuID);
+        if (suat){
+            suat.gheDaDat = (suat.gheDaDat || []).concat(v.danhSachGhe);
+        }
+    });
+    saveData("danhSachSuatChieu", danhSachSuatChieu);
 }
 veCoSan();
 //Đóng mở modal Thêm phim
