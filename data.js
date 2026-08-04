@@ -289,9 +289,112 @@ phongCoSan();
 //Danh sách suất chiếu
 function suatChieuCoSan(){
     let suat = getData("danhSachSuatChieu");
-    if (suat.length === 0){
-        saveData("danhSachSuatChieu", []);
-    }
+    if (suat.length > 0) return;
+    let danhSachPhim = getData("danhSachPhim");
+    let danhSachPhong = getData("danhSachPhong");
+    if (danhSachPhim.length === 0 || danhSachPhong.length === 0) return;
+    let suatMau = [
+        {
+            id: 1,
+            phimID: danhSachPhim[0].id,
+            phongID: danhSachPhong[0].id,
+            ngay: "2026-08-11",
+            gio: "18:00",
+            trangThai: "Sắp chiếu",
+            gheDaDat: []
+        },
+        {
+            id: 2,
+            phimID: danhSachPhim[0].id,
+            phongID: danhSachPhong[1].id,
+            ngay: "2026-08-11",
+            gio: "12:00",
+            trangThai: "Sắp chiếu",
+            gheDaDat: []
+        },
+        {
+            id: 3,
+            phimID: danhSachPhim[0].id,
+            phongID: danhSachPhong[2].id,
+            ngay: "2026-08-11",
+            gio: "15:00",
+            trangThai: "Sắp chiếu",
+            gheDaDat: []
+        },
+        {
+            id: 4,
+            phimID: danhSachPhim[0].id,
+            phongID: danhSachPhong[2].id,
+            ngay: "2026-08-12",
+            gio: "21:30",
+            trangThai: "Sắp chiếu",
+            gheDaDat: []
+        },
+        {
+            id: 5,
+            phimID: danhSachPhim[1].id,
+            phongID: danhSachPhong[0].id,
+            ngay: "2026-08-11",
+            gio: "14:00",
+            trangThai: "Sắp chiếu",
+            gheDaDat: []
+        },
+        {
+            id: 6,
+            phimID: danhSachPhim[1].id,
+            phongID: danhSachPhong[1].id,
+            ngay: "2026-08-12",
+            gio: "20:30",
+            trangThai: "Sắp chiếu",
+            gheDaDat: []
+        },
+        {
+            id: 7,
+            phimID: danhSachPhim[2].id,
+            phongID: danhSachPhong[1].id,
+            ngay: "2026-08-12",
+            gio: "17:30",
+            trangThai: "Sắp chiếu",
+            gheDaDat: []
+        },
+        {
+            id: 8,
+            phimID: danhSachPhim[2].id,
+            phongID: danhSachPhong[2].id,
+            ngay: "2026-08-13",
+            gio: "09:30",
+            trangThai: "Sắp chiếu",
+            gheDaDat: []
+        },
+        {
+            id: 9,
+            phimID: danhSachPhim[3].id,
+            phongID: danhSachPhong[2].id,
+            ngay: "2026-08-12",
+            gio: "11:30",
+            trangThai: "Sắp chiếu",
+            gheDaDat: []
+        },
+        {
+            id: 10,
+            phimID: danhSachPhim[3].id,
+            phongID: danhSachPhong[0].id,
+            ngay: "2026-08-14",
+            gio: "14:30",
+            trangThai: "Sắp chiếu",
+            gheDaDat: []
+        },
+        {
+            id: 11,
+            phimID: danhSachPhim[3].id,
+            phongID: danhSachPhong[1].id,
+            ngay: "2026-08-14",
+            gio: "17:30",
+            trangThai: "Sắp chiếu",
+            gheDaDat: []
+        }
+    ];
+    saveData("danhSachSuatChieu", suatMau);
 }
 suatChieuCoSan();
 //Danh sách vé
@@ -306,7 +409,7 @@ veCoSan();
 function openModal(id){
     let ok = document.getElementById(id);
     ok.style.display = "flex";
-};
+}
 function closeModal(id){
     let ok = document.getElementById(id);
     ok.style.display = "none";
