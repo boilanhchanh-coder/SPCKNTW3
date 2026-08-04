@@ -13,12 +13,26 @@ function tkAdminCoSan(){
         accounts.push({
             username: "admin",
             password: "1",
-            role: "Admin",
+            role: "Admin"
         });
-        saveData("accounts", accounts)
+        saveData("accounts", accounts);
     }
 }
 tkAdminCoSan();
+//Tài khoản Customer
+function tkUserCoSan(){
+    let accounts = getData("accounts");
+    let userExists = accounts.some(acc => acc.username === "user01" || acc.username === "user02");
+    if (!userExists){
+        accounts.push({
+            username: "user01",
+            password: "1",
+            role: "User"
+        });
+        saveData("accounts", accounts);
+    }
+}
+tkUserCoSan();
 //Đăng kí
 function register(){
     let success = document.getElementById("registerSuccess");
@@ -103,13 +117,13 @@ function phimCoSan(){
                 id: 2
             },
             {
-                tenPhim: "Tạm Biệt Gohan",
-                theLoai: ["Gia đình", "Chính kịch", "Lãng mạn", "Phiêu lưu"],
-                thoiLuong: 140,
-                moTa: "Suốt mười năm lang thang, chú chó hoang mang tên Gohan đã trải qua nhiều cuộc gặp gỡ và chia ly cùng những người chủ khác nhau. Mỗi chặng đường đều để lại trong Gohan những ký ức không thể phai mờ về tình yêu thương, lòng trung thành và sự gắn kết giữa con người với động vật. Bộ phim mang đến câu chuyện cảm động về thời gian, gia đình và giá trị của những cuộc hội ngộ.",
+                id:14,
+                tenPhim: "Người nhện: Khởi đầu mới",
+                theLoai: ["Hành động, Phiêu lưu, Siêu anh hùng"],
+                thoiLuong: 120,
                 trangThai: "Đang chiếu",
-                anh: "gohan.jpg",
-                id: 3
+                anh: "spiderman.jpg",
+                mota: "Sau những biến cố trước đó, Peter Parker buộc phải một mình đối mặt với những thử thách mới khi không còn sự hỗ trợ từ Tony Stark hay những người thân thiết. Một kẻ thù bí ẩn cùng hàng loạt vụ án mới xuất hiện, đồng thời những biến đổi kỳ lạ trong cơ thể khiến Người Nhện phải đối diện với cuộc chiến lớn nhất từ trước đến nay để bảo vệ thành phố và chính bản thân mình.",
             },
             {
                 tenPhim: "Your Name",
@@ -201,16 +215,6 @@ function phimCoSan(){
                 anh: "shin.jpg",
                 mota:"Lấy bối cảnh mùa hè tại Akita, bộ phim theo chân Shin và gia đình Nohara trong chuyến về quê đầy háo hức. Tuy nhiên, một sự kiện kỳ lạ đã đưa cả gia đình lạc vào Xứ sở Yêu quái bí ẩn – nơi con người không được phép đặt chân tới. Tại đây, Shin và những người thân phải đối mặt với hàng loạt thử thách bất ngờ, đồng thời gặp gỡ nhiều yêu quái độc đáo, hài hước và đáng yêu. Bộ phim mang đến một hành trình phiêu lưu hấp dẫn với những thông điệp ý nghĩa về tình cảm gia đình và tình bạn." ,
             },
-
-            {
-                id:14,
-                tenPhim: "Người nhện: Khởi đầu mới",
-                theLoai: ["Hành động, Phiêu lưu, Siêu anh hùng"],
-                thoiLuong: 120,
-                trangThai: "Sắp chiếu",
-                anh: "spiderman.jpg",
-                mota: "Sau những biến cố trước đó, Peter Parker buộc phải một mình đối mặt với những thử thách mới khi không còn sự hỗ trợ từ Tony Stark hay những người thân thiết. Một kẻ thù bí ẩn cùng hàng loạt vụ án mới xuất hiện, đồng thời những biến đổi kỳ lạ trong cơ thể khiến Người Nhện phải đối diện với cuộc chiến lớn nhất từ trước đến nay để bảo vệ thành phố và chính bản thân mình.",
-            },
             {
                 id:15,
                 tenPhim: "Thám tử lừng danh Conan: Thiên thần sa ngã trên xa lộ ",
@@ -229,7 +233,15 @@ function phimCoSan(){
                 anh: "mcc.jpg",
                 mota:"Phim được lấy cảm hứng từ Nhật ký Mãi mãi tuổi hai mươi của liệt sĩ Nguyễn Văn Thạc và những ký ức chiến trường về Thành cổ Quảng Trị, bộ phim là bản hùng ca xúc động về một thế hệ thanh niên Việt Nam đã sống, chiến đấu và cống hiến trọn vẹn tuổi xuân cho độc lập, tự do của Tổ quốc" ,
             },
-            
+            {
+                tenPhim: "Tạm Biệt Gohan",
+                theLoai: ["Gia đình", "Chính kịch", "Lãng mạn", "Phiêu lưu"],
+                thoiLuong: 140,
+                moTa: "Suốt mười năm lang thang, chú chó hoang mang tên Gohan đã trải qua nhiều cuộc gặp gỡ và chia ly cùng những người chủ khác nhau. Mỗi chặng đường đều để lại trong Gohan những ký ức không thể phai mờ về tình yêu thương, lòng trung thành và sự gắn kết giữa con người với động vật. Bộ phim mang đến câu chuyện cảm động về thời gian, gia đình và giá trị của những cuộc hội ngộ.",
+                trangThai: "Sắp chiếu",
+                anh: "gohan.jpg",
+                id: 3
+            },
         ];
         saveData("danhSachPhim", phimBanDau);
     }
