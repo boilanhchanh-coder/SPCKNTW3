@@ -111,7 +111,7 @@ function datVe(){
     let username = getData("NguoiDung");
     let veMoi = {
         id: taoIdMoi(danhSachVe),
-        username: username,
+        nguoiDung: username,
         suatChieuID: suatChieu.id,
         danhSachGhe: [...gheDangChon],
         soLuongVe: gheDangChon.length,
