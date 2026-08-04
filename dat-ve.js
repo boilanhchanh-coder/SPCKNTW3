@@ -108,8 +108,10 @@ function datVe(){
     let donGia = phong.giaVe;
     let tongTien = donGia*gheDangChon.length;
     let danhSachVe = getData("danhSachVe");
+    let username = getData("NguoiDung");
     let veMoi = {
         id: taoIdMoi(danhSachVe),
+        username: username,
         suatChieuID: suatChieu.id,
         danhSachGhe: [...gheDangChon],
         soLuongVe: gheDangChon.length,
@@ -143,4 +145,44 @@ function capNhatThongTin(){
         hienThiGhe.textContent = gheDangChon.join(", ");
         tongTien.textContent = (gheDangChon.length * phong.giaVe).toLocaleString("vi-VN") + " đ";
     }
+}
+function moPopupVe(){
+
+    if(!suatDangChon){
+        alert("Vui lòng chọn suất chiếu");
+        return;
+    }
+
+    if(gheDangChon.length == 0){
+        alert("Vui lòng chọn ghế");
+        return;
+    }
+
+    let danhSachPhong = getData("danhSachPhong");
+    let phong = danhSachPhong.find(p => p.id == suatDangChon.phongID);
+
+    let danhSachPhim = getData("danhSachPhim");
+    let phim = danhSachPhim.find(p => p.id == id);
+
+    let tongTien = phong.giaVe * gheDangChon.length;
+
+    document.getElementById("popupTenPhim").textContent = phim.tenPhim;
+    document.getElementById("popupNgay").textContent = suatDangChon.ngay;
+    document.getElementById("popupGio").textContent = suatDangChon.gio;
+    document.getElementById("popupSuat").textContent =  "Phòng " + phong.tenPhong;    
+    document.getElementById("popupGhe").textContent = gheDangChon.join(", ");
+    document.getElementById("popupTien").textContent =
+        tongTien.toLocaleString("vi-VN") + " đ";
+
+    document.getElementById("popupVe").style.display = "flex";
+}
+function dongPopup(){
+    document.getElementById("popupVe").style.display = "none";
+}
+function xacNhanMuaVe(){
+
+    dongPopup();
+
+    datVe();
+
 }

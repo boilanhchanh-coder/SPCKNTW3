@@ -14,6 +14,7 @@
     <header class="topbar">
         <div class="logo">CINEMA</div>
         <div class="right">
+            <button class="myinf" onclick="moHoSo()">Hồ sơ</button>
             <button class="myinfor" onclick="logout()">Đăng xuất</button>        
         </div>  
     </header><hr class="dong-ke">
@@ -44,12 +45,49 @@
                     <p>Ghế đã chọn: <span id="ds-ghe-chon">Chưa chọn</span></p>
                     <p>Tổng tiền: <span id="tong-tien">0 đ</span></p>
                 </div>
-                <button class="btn-xac-nhan" onclick="datVe()">Xác nhận đặt vé</button>
+                <button class="btn-xac-nhan" onclick="moPopupVe()">Xác nhận đặt vé</button>
             </div>
         </div>
     </section>
+    <div id="popupVe" class="popup">
+
+    <div class="popup-content">
+
+        <h2>Xác nhận thông tin vé</h2>
+
+        <div class="thong-tin-ve">
+
+            <p><strong>Tên phim:</strong> <span id="popupTenPhim"></span></p>
+
+            <p><strong>Ngày chiếu:</strong> <span id="popupNgay"></span></p>
+
+            <p><strong>Giờ chiếu:</strong> <span id="popupGio"></span></p>
+
+            <p><strong>Suất chiếu:</strong> <span id="popupSuat"></span></p>
+
+            <p><strong>Ghế:</strong> <span id="popupGhe"></span></p>
+
+            <p><strong>Tổng tiền:</strong> <span id="popupTien"></span></p>
+
+        </div>
+
+        <div class="popup-button">
+
+            <button class="btn-huy" onclick="dongPopup()">
+                Hủy
+            </button>
+
+            <button class="btn-mua" onclick="xacNhanMuaVe()">
+                Xác nhận mua vé
+            </button>
+
+        </div>
+    </div>
+
+</div>
     <script src="data.js"></script>
     <script src="dat-ve.js"></script>
+    
 </body>
 </html>
 

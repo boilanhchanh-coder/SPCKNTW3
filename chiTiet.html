@@ -51,29 +51,18 @@ body{
     align-items:center;
     gap:15px;
 }
-
-.tim-kiem{
-    position:relative;
-}
-
-.search{
-    width:260px;
+.myinf{
+    width:120px;
     height:42px;
-    background:#1d1d1d;
+    background:#e0743a;
+    color:white;
     border:none;
     border-radius:10px;
-    color:white;
-    padding:0 45px 0 18px;
-    outline:none;
+    font-weight:600;
 }
-
-.kinh-lup{
-    position:absolute;
-    right:15px;
-    top:50%;
-    transform:translateY(-50%);
-    color:#888;
-}
+.myinf:hover{
+        background:#ff8b4b;
+    }
 
 .myinfor{
     width:120px;
@@ -211,7 +200,8 @@ body{
         <div class="logo">CINEMA</div>
 
         <div class="right">
-            <button class="myinfor">Đăng xuất</button>
+             <button class="myinf" onclick="moHoSo()">Hồ sơ</button>
+            <button class="myinfor"  onclick="logout()">Đăng xuất</button>
         </div>
     </header>
 

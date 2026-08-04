@@ -85,6 +85,9 @@ function login(){
         error.style.display = "block";
     }
 }
+function moHoSo(){
+    location.href = "hoso.html";
+}
 //Đăng xuất
 function logout(){
     location.href = "index.html";
